@@ -107,7 +107,7 @@
 
   .section-label {
     font-family: 'DM Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--amber);
@@ -116,20 +116,20 @@
 
   h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(24px, 3.5vw, 38px);
+    font-size: clamp(26px, 4vw, 38px);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
     color: var(--brown);
     margin-bottom: 24px;
   }
   h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--brown);
     margin-bottom: 12px;
   }
-  p { margin-bottom: 16px; font-size: 15.5px; color: #2a1e10; }
+  p { margin-bottom: 16px; font-size: 16px; line-height: 1.75; color: #2a1e10; }
   p:last-child { margin-bottom: 0; }
 
   strong { font-weight: 600; color: var(--ink); }
@@ -163,16 +163,16 @@
   .stat-card.red .stat-value { color: var(--rust); }
   .stat-card.green .stat-value { color: var(--forest); }
   .stat-label {
-    font-size: 13px;
+    font-size: 14.5px;
     font-weight: 500;
     color: var(--muted);
     letter-spacing: 0.3px;
-    line-height: 1.4;
+    line-height: 1.45;
   }
   .stat-card.dark .stat-label { color: rgba(245,237,216,0.65); }
   .stat-source {
     font-family: 'DM Mono', monospace;
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 1px;
     color: var(--muted);
     margin-top: 8px;
@@ -195,7 +195,7 @@
     margin-bottom: 8px;
   }
   .cookie-subtitle {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--muted);
     margin-bottom: 32px;
     font-family: 'DM Mono', monospace;
@@ -498,11 +498,11 @@
     width: 100%;
     border-collapse: collapse;
     margin: 32px 0;
-    font-size: 14px;
+    font-size: 15px;
   }
   .compare-table th {
     font-family: 'DM Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--amber);
@@ -515,7 +515,7 @@
     padding: 12px 16px;
     border-bottom: 1px solid var(--divider);
     vertical-align: top;
-    font-size: 13.5px;
+    font-size: 15px;
   }
   .compare-table tr:last-child td { border-bottom: none; }
   .compare-table tr:nth-child(even) td { background: rgba(107,58,31,0.03); }
@@ -859,6 +859,9 @@
     display: block;
     margin: 0 auto;
     overflow: visible;
+    width: 100%;
+    height: auto;
+    max-width: 640px;
   }
   .tufte-axis-line {
     stroke: var(--muted);
@@ -868,7 +871,8 @@
   .tufte-axis-text {
     fill: var(--muted);
     font-family: 'DM Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
+    font-weight: 500;
     text-anchor: middle;
   }
   .tufte-axis-text.y-label {
@@ -901,6 +905,14 @@
   .tufte-data-point.mejora { fill: var(--amber); }
   .tufte-data-point.regresion { fill: var(--slate); }
   .tufte-data-point.recuperacion { fill: var(--forest); }
+  
+  .tufte-data-touch-target {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tufte-data-touch-target:focus {
+    outline: none;
+  }
   
   .tufte-annotation {
     font-family: 'DM Sans', sans-serif;
@@ -959,7 +971,7 @@
   <div class="masthead-inner">
     <div class="masthead-eyebrow">Radiografía · Desigualdad de Ingreso · Colombia 2002–2023</div>
     <h1 class="fade-up">¿Cómo se reparten<br>las <em>galletas</em><br>en Colombia?</h1>
-    <p class="masthead-sub fade-up delay-1">Una lectura honesta del Índice de Palma: lo que dice, lo que mejoró, lo que sigue roto — y por qué el 10% más rico come diferente.</p>
+    <p class="masthead-sub fade-up delay-1">Un análisis objetivo del Índice de Palma: sus alcances analíticos, las mejoras registradas, los desafíos estructurales pendientes y la concentración de ingresos en el decil superior.</p>
     <div class="masthead-meta fade-up delay-2">
       <span>Fuente principal: DANE · GEIH 2002–2023</span>
       <span>Complemento: BanRep · CEPAL · WID.world</span>
@@ -1065,7 +1077,7 @@
     </div>
   </div>
 
-  <p>Las transferencias sociales (Familias en Acción, Colombia Mayor, subsidios, etc.) ya están <em>incluidas</em> en las 12 galletas del 40% más pobre. <strong>Sin ellas, tendrían menos de 9.</strong> El Estado mueve la aguja, pero no la reencuadra.</p>
+  <p>Las transferencias sociales (como Renta Ciudadana, Colombia Mayor y otros subsidios del Estado) ya se encuentran incorporadas en las 12 galletas asignadas al 40% más pobre. <strong>Sin estas transferencias, la participación de este grupo descendería a menos de 9 galletas.</strong> Las transferencias sociales mitigan la brecha de ingresos, aunque la estructura distributiva de base permanece altamente concentrada.</p>
 
   <!-- ¿Qué es la galleta? -->
   <div class="cookie-note fade-up delay-2">
@@ -1074,18 +1086,18 @@
     <div class="nutrition-grid">
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
-        <strong>Salarios y honorarios</strong>
-        La galleta tiene miga real: trabajo formal e informal reportado.
+        <strong>Ingresos laborales</strong>
+        Representan el componente principal: ingresos corrientes por trabajo asalariado e independiente, tanto formal como informal.
       </div>
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
         <strong>Pensiones y cesantías</strong>
-        Ingreso diferido del trabajo, concentrado en clases medias-altas.
+        Ingreso diferido por jubilación, concentrado principalmente en los percentiles de ingresos medios y altos.
       </div>
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
-        <strong>Transferencias del Estado</strong>
-        Familias en Acción, Colombia Mayor, subsidios. Son la cobertura de azúcar de las galletas del 40% más pobre.
+        <strong>Transferencias monetarias</strong>
+        Programas de asistencia social y subsidios públicos, los cuales actúan como un amortiguador crítico de ingresos para los deciles inferiores.
       </div>
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
@@ -1099,8 +1111,8 @@
       </div>
       <div class="nutrition-item" style="border: 1px dashed var(--rust); background: #fdf0ee;">
         <span class="ni-tag" style="color: var(--rust);">✗ No incluido</span>
-        <strong>Patrimonio / riqueza neta</strong>
-        Tierra, acciones, inmuebles: la desigualdad <em>real</em> es mucho mayor. Aquí la galleta no captura el cofre de la despensa.
+        <strong>Patrimonio y riqueza neta</strong>
+        Propiedad de tierras, acciones e inmuebles. La concentración de activos es significativamente superior a la del ingreso; este indicador de flujo no refleja la acumulación física o financiera de activos productivos.
       </div>
     </div>
     <p style="margin-top: 18px; font-size: 13px; color: var(--muted);"><strong>Conclusión:</strong> La galleta es <em>ingreso monetario del hogar, post-transferencias, en el período de referencia.</em> No es riqueza, no es patrimonio. El Palma que ves ya es el <em>mejor</em> escenario porque suaviza la desigualdad real.</p>
@@ -1109,8 +1121,8 @@
 
 <!-- ═══════════════════════════════ 03. EVOLUCIÓN ══════════════════════════ -->
 <section>
-  <div class="section-label">03 — 20 años de historia</div>
-  <h2>El arco narrativo: avance real, techo real</h2>
+  <div class="section-label">03 — Trayectoria Histórica</div>
+  <h2>Evolución temporal: tendencias, avances y límites distributivos</h2>
 
   <p>La serie disponible de Palma post-transferencias para Colombia (DANE-GEIH, metodología MESEP empatada 2002–2023) muestra una trayectoria con tres actos claramente diferenciados.</p>
 
@@ -1229,7 +1241,7 @@
   </table>
 
   <div class="callout">
-    <div class="callout-text">Colombia ha mejorado en 20 años lo que otros lograron en 30. Y aun así, en 2023 sigue estando más cerca de Brasil que de Perú. El camino recorrido no alcanza para celebrar.</div>
+    <div class="callout-text">La reducción del Índice de Palma en Colombia durante las últimas dos décadas refleja un avance distributivo notable en el contexto regional; no obstante, la brecha respecto a economías más equitativas de América Latina y la OCDE se mantiene sustancial.</div>
     <div class="callout-source">— Síntesis editorial basada en CEPAL 2022, BanRep ESPE 2022, DANE 2024</div>
   </div>
 </section>
@@ -1265,7 +1277,7 @@
   </div>
 
   <div class="warning-box">
-    <h4>⚠ errores comunes al interpretar el Palma — no hagas esto</h4>
+    <h4>⚠ Consideraciones clave para evitar sesgos analíticos al interpretar el Palma</h4>
     <ul class="warning-list">
       <li><strong>"El Palma bajó, por lo tanto la desigualdad desapareció."</strong> Falso. Un Palma de 3.7 sigue siendo una brecha abismal en términos de calidad de vida y oportunidades.</li>
       <li><strong>"El decil 10 son los millonarios."</strong> No exactamente. Las encuestas de hogares <em>subreportan</em> los ingresos del 0.1% más rico. El decil 10 en GEIH incluye muchos profesionales con buen salario, pero los verdaderos superricos están estadísticamente invisibles.</li>
@@ -1316,7 +1328,7 @@
 
   <p>Si en 2002 la repartición era así: <strong>1 persona lleva 49 galletas, y las otras 4 del fondo se reparten 10</strong> — un Palma de casi 5 — y hoy esa persona lleva <strong>45</strong> y las otras 4 del fondo tienen <strong>12</strong>... ¿es un progreso? <strong>Técnicamente, sí.</strong></p>
 
-  <p>¿Es justo? Eso no lo dice el índice. Pero el índice sí dice algo sin ambigüedad: mientras el 40% más pobre de Colombia comparte el ingreso de una sola persona del decil 10, <strong>la mesa está estructuralmente desequilibrada</strong>, con o sin transferencias.</p>
+  <p>¿Constituyen estas variaciones una mejora distributiva? Los datos reflejan una disminución gradual de la disparidad extrema de ingresos; sin embargo, dado que la porción agregada del 40% con menores recursos equivale a una fracción del ingreso del decil superior, la concentración distributiva en Colombia continúa en niveles históricamente elevados.</p>
 
   <div class="callout">
     <div class="callout-text">La clase media colombiana (el 50% del medio) recibe ~43 galletas, estable como reloj. Los únicos que realmente disputan las galletas son los de arriba y los de abajo. Y de ese juego, el Palma es el árbitro más honesto que tenemos.</div>
@@ -1508,21 +1520,32 @@
       `;
     });
 
-    // Draw Data Points
+    // Draw Data Points and Touch Targets
     let pointsHTML = '';
-    data.forEach(d => {
+    let touchTargetsHTML = '';
+    data.forEach((d, idx) => {
       const x = getX(d.year);
       const y = getY(d.value);
       pointsHTML += `
         <circle cx="${x}" cy="${y}" r="5" 
           class="tufte-data-point ${d.phase}" 
+          id="pt-${idx}"
+          aria-hidden="true"
+        />
+      `;
+      touchTargetsHTML += `
+        <circle cx="${x}" cy="${y}" r="22" 
+          class="tufte-data-touch-target" 
+          fill="transparent"
+          style="cursor:pointer; pointer-events:all;"
           tabindex="0"
           role="button"
-          aria-label="Año ${d.year}: Índice de Palma de ${d.value}. ${d.note}"
+          aria-label="Año ${d.year}: Razón de Palma de ${d.value}. ${d.note}"
           data-year="${d.year}"
           data-value="${d.value}"
           data-note="${d.note}"
           data-phase="${d.phase}"
+          data-index="${idx}"
         />
       `;
     });
@@ -1563,28 +1586,39 @@
 
         <!-- Data circles -->
         ${pointsHTML}
+        <!-- Touch target overlays on top -->
+        ${touchTargetsHTML}
       </svg>
     `;
 
-    // Add interactivity
-    const points = container.querySelectorAll('.tufte-data-point');
-    points.forEach(pt => {
+    // Add interactivity to touch targets
+    const targets = container.querySelectorAll('.tufte-data-touch-target');
+    targets.forEach(pt => {
       const showTooltip = (e) => {
         const year = pt.getAttribute('data-year');
         const val = pt.getAttribute('data-value');
         const note = pt.getAttribute('data-note');
         const phase = pt.getAttribute('data-phase');
+        const idx = pt.getAttribute('data-index');
+
+        // Visual hover effect on corresponding visual dot
+        const visualPt = container.querySelector(`#pt-${idx}`);
+        if (visualPt) {
+          visualPt.setAttribute('r', '7');
+          visualPt.style.stroke = 'var(--ink)';
+          visualPt.style.strokeWidth = '2.5px';
+        }
 
         // Color tag mapping
         let phaseText = '';
-        if (phase === 'crisis') phaseText = 'Crisis alta (> 4.5)';
-        else if (phase === 'mejora') phaseText = 'Mejora gradual (3.7–4.4)';
-        else if (phase === 'regresion') phaseText = 'Regresión COVID-19';
-        else if (phase === 'recuperacion') phaseText = 'Recuperación reciente';
+        if (phase === 'crisis') phaseText = 'Concentración extrema (> 4.5)';
+        else if (phase === 'mejora') phaseText = 'Fase de reducción progresiva (3.7–4.4)';
+        else if (phase === 'regresion') phaseText = 'Regresión por impacto COVID-19';
+        else if (phase === 'recuperacion') phaseText = 'Periodo de recuperación distributiva';
 
         tooltip.innerHTML = `
           <strong>Año ${year}</strong>
-          <div>Palma: <strong>${val}</strong></div>
+          <div>Razón de Palma: <strong>${val}</strong></div>
           <div style="font-size:10px; margin-top:4px; opacity:0.85; font-weight:500;">${phaseText}</div>
           <div style="font-size:10px; margin-top:2px; font-style:italic; opacity:0.75; line-height:1.2;">${note}</div>
         `;
@@ -1595,19 +1629,48 @@
         
         // Set coordinates relative to chart block
         tooltip.style.left = `${rect.left - parentRect.left + 15}px`;
-        tooltip.style.top = `${rect.top - parentRect.top - 45}px`;
+        tooltip.style.top = `${rect.top - parentRect.top - 55}px`;
         tooltip.style.opacity = '1';
+
+        // Stop event propagation to prevent immediate document close touch handler from firing
+        if (e && e.cancelable) e.stopPropagation();
       };
 
       const hideTooltip = () => {
+        const idx = pt.getAttribute('data-index');
+        const visualPt = container.querySelector(`#pt-${idx}`);
+        if (visualPt) {
+          visualPt.setAttribute('r', '5');
+          visualPt.style.stroke = 'var(--paper)';
+          visualPt.style.strokeWidth = '2px';
+        }
         tooltip.style.opacity = '0';
       };
 
+      // Mouse Events
       pt.addEventListener('mouseenter', showTooltip);
-      pt.addEventListener('focus', showTooltip);
       pt.addEventListener('mouseleave', hideTooltip);
+
+      // Keyboard Focus
+      pt.addEventListener('focus', showTooltip);
       pt.addEventListener('blur', hideTooltip);
+
+      // Touch Events (Mobile Pixel 7 / iPhone compatibility)
+      pt.addEventListener('touchstart', showTooltip, { passive: false });
     });
+
+    // Close tooltip when clicking/tapping elsewhere in the document (highly responsive mobile UX)
+    const closeHandler = () => {
+      tooltip.style.opacity = '0';
+      const visualPoints = container.querySelectorAll('.tufte-data-point');
+      visualPoints.forEach(vp => {
+        vp.setAttribute('r', '5');
+        vp.style.stroke = 'var(--paper)';
+        vp.style.strokeWidth = '2px';
+      });
+    };
+    document.addEventListener('touchstart', closeHandler, { passive: true });
+    document.addEventListener('click', closeHandler);
   }
 
   // 5. RUN INITIALIZATIONS
