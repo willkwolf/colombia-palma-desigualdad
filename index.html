@@ -12,12 +12,12 @@
     --paper: #EDE4CC;
     --ink: #1A1208;
     --brown: #6B3A1F;
-    --amber: #C8780A;
+    --amber: #954A00; /* WCAG 2.1 AA compliant (> 4.8:1 contrast) */
     --gold: #E8A825;
-    --rust: #B84B2C;
+    --rust: #B0351B; /* WCAG 2.1 AA compliant danger/alert contrast (> 5:1) */
     --forest: #2D5A3D;
     --slate: #3D4B5C;
-    --muted: #8A7B65;
+    --muted: #5A4D3B; /* WCAG 2.1 AA compliant muted contrast (> 7:1) */
     --accent-red: #C0392B;
     --accent-green: #27AE60;
     --divider: rgba(107,58,31,0.15);
@@ -730,12 +730,232 @@
     margin: 32px 0;
   }
 
+  /* SKIP LINK ACCESSIBILITY */
+  .skip-link {
+    position: absolute;
+    top: -100px; left: 16px;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 8px 16px;
+    z-index: 1000;
+    font-weight: bold;
+    border-radius: 2px;
+    transition: top 0.2s ease;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-decoration: none;
+    border: 1px solid var(--brown);
+  }
+  .skip-link:focus {
+    top: 16px;
+    outline: 2px solid var(--ink);
+  }
+
+  /* COOKIE GRID & SVG COOKIES */
+  .cookie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16px, 1fr));
+    gap: 4px;
+    margin: 16px 0;
+    min-height: 48px;
+    justify-content: center;
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cookie-svg {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  .cookie-svg:hover {
+    transform: scale(1.3) rotate(15deg);
+  }
+
+  /* WAFFLE CHART STYLE */
+  .unified-waffle-wrap {
+    background: white;
+    border: 1px solid var(--divider);
+    border-radius: 3px;
+    padding: 28px 24px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .waffle-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .waffle-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 24px);
+    grid-template-rows: repeat(10, 24px);
+    gap: 4px;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .waffle-cell {
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: help;
+  }
+  .waffle-cell:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 8px rgba(107,58,31,0.25);
+    z-index: 10;
+  }
+  .waffle-cell.poor { background: var(--amber); }
+  .waffle-cell.middle { background: var(--forest); }
+  .waffle-cell.rich { background: var(--rust); }
+  
+  .waffle-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .waffle-legend-item { display: flex; align-items: center; gap: 8px; }
+  .waffle-dot { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+
+  /* TUFTE LINE CHART STYLE */
+  .tufte-chart-container {
+    background: var(--paper);
+    border: 1px solid var(--divider);
+    border-radius: 3px;
+    padding: 32px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .tufte-chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+  .tufte-chart-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+  .chart-svg-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tufte-svg {
+    display: block;
+    margin: 0 auto;
+    overflow: visible;
+  }
+  .tufte-axis-line {
+    stroke: var(--muted);
+    stroke-width: 1px;
+    stroke-linecap: round;
+  }
+  .tufte-axis-text {
+    fill: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    text-anchor: middle;
+  }
+  .tufte-axis-text.y-label {
+    text-anchor: end;
+  }
+  .tufte-data-line {
+    fill: none;
+    stroke: var(--brown);
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .tufte-data-point {
+    stroke-width: 2px;
+    stroke: var(--paper);
+    cursor: pointer;
+    transition: r 0.2s ease, stroke-width 0.2s ease;
+  }
+  .tufte-data-point:focus {
+    outline: none;
+    r: 7px;
+    stroke: var(--ink);
+    stroke-width: 3px;
+  }
+  .tufte-data-point:hover {
+    r: 7px;
+    stroke-width: 2.5px;
+  }
+  .tufte-data-point.crisis { fill: var(--rust); }
+  .tufte-data-point.mejora { fill: var(--amber); }
+  .tufte-data-point.regresion { fill: var(--slate); }
+  .tufte-data-point.recuperacion { fill: var(--forest); }
+  
+  .tufte-annotation {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    fill: var(--ink);
+    font-weight: 400;
+  }
+  .tufte-annotation-bg {
+    fill: var(--cream);
+    opacity: 0.85;
+    rx: 2px;
+  }
+  .tufte-leader-line {
+    stroke: var(--muted);
+    stroke-width: 0.75px;
+    stroke-dasharray: 2 2;
+  }
+
+  /* CHART ACCESSIBLE TOOLTIP */
+  .chart-tooltip {
+    position: absolute;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 10px 14px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 220px;
+    border-left: 3px solid var(--gold);
+    line-height: 1.4;
+    text-align: left;
+  }
+  .chart-tooltip strong {
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .tufte-chart-container { padding: 20px 16px; }
+  }
+
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
 <!-- ═══════════════════════════════ MASTHEAD ═══════════════════════════════ -->
-<div class="masthead">
+<header class="masthead">
   <div class="masthead-inner">
     <div class="masthead-eyebrow">Radiografía · Desigualdad de Ingreso · Colombia 2002–2023</div>
     <h1 class="fade-up">¿Cómo se reparten<br>las <em>galletas</em><br>en Colombia?</h1>
@@ -746,9 +966,9 @@
       <span>Indicador: Razón de Palma post-transferencias</span>
     </div>
   </div>
-</div>
+</header>
 
-<div class="page">
+<main class="page" id="main-content">
 
 <!-- ═══════════════════════════════ 01. QUÉ ES PALMA ═══════════════════════ -->
 <section>
@@ -782,12 +1002,14 @@
     <div class="cookie-groups">
 
       <!-- POBRES -->
-      <div class="cookie-group cg-poor">
+      <div class="cookie-group cg-poor" tabindex="0" aria-label="Grupo del 40 por ciento más pobre: 4 personas se reparten 12 galletas en total. Cada persona recibe 3 galletas.">
         <div class="cg-tag">40% más pobre</div>
         <div class="cg-people">4 personas</div>
         <div class="cg-cookies-number">12</div>
         <div class="cg-cookies-label">galletas en total</div>
-        <div class="cookie-emoji-row">🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪</div>
+        <div class="cookie-grid-container" aria-hidden="true" id="cookie-grid-poor">
+          <!-- Populated by JS -->
+        </div>
         <div class="cg-per-person">
           por persona<br>
           <strong>3 galletas</strong>
@@ -795,12 +1017,14 @@
       </div>
 
       <!-- MEDIA -->
-      <div class="cookie-group cg-middle">
+      <div class="cookie-group cg-middle" tabindex="0" aria-label="Grupo de la clase media del 50 por ciento: 5 personas se reparten 43 galletas en total. Cada persona recibe 8.6 galletas.">
         <div class="cg-tag">Clase media 50%</div>
         <div class="cg-people">5 personas</div>
         <div class="cg-cookies-number">43</div>
         <div class="cg-cookies-label">galletas en total</div>
-        <div class="cookie-emoji-row">🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪</div>
+        <div class="cookie-grid-container" aria-hidden="true" id="cookie-grid-middle">
+          <!-- Populated by JS -->
+        </div>
         <div class="cg-per-person">
           por persona<br>
           <strong>8.6 galletas</strong>
@@ -808,16 +1032,29 @@
       </div>
 
       <!-- RICOS -->
-      <div class="cookie-group cg-rich">
+      <div class="cookie-group cg-rich" tabindex="0" aria-label="Grupo del 10 por ciento más rico: 1 persona se lleva 45 galletas en total. Esta persona recibe 45 galletas.">
         <div class="cg-tag">10% más rico</div>
         <div class="cg-people">1 persona</div>
         <div class="cg-cookies-number">45</div>
         <div class="cg-cookies-label">galletas en total</div>
-        <div class="cookie-emoji-row" style="font-size:14px;">🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪</div>
+        <div class="cookie-grid-container" aria-hidden="true" id="cookie-grid-rich">
+          <!-- Populated by JS -->
+        </div>
         <div class="cg-per-person">
           por persona<br>
           <strong>45 galletas</strong>
         </div>
+      </div>
+    </div>
+
+    <!-- Unified Waffle Chart -->
+    <div class="unified-waffle-wrap" tabindex="0" aria-label="Matriz de 100 galletas que representa la distribución del ingreso nacional: 12 galletas para el 40% más pobre, 43 galletas para el 50% medio, y 45 galletas para el 10% más rico.">
+      <div class="waffle-title">Distribución del ingreso total (100% de la torta nacional)</div>
+      <div id="waffle-grid" class="waffle-grid" aria-hidden="true"></div>
+      <div class="waffle-legend" aria-hidden="true">
+        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell poor"></span> 40% más pobre (12% del ingreso)</div>
+        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell middle"></span> Clase media 50% (43% del ingreso)</div>
+        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell rich"></span> 10% más rico (45% del ingreso)</div>
       </div>
     </div>
 
@@ -877,106 +1114,20 @@
 
   <p>La serie disponible de Palma post-transferencias para Colombia (DANE-GEIH, metodología MESEP empatada 2002–2023) muestra una trayectoria con tres actos claramente diferenciados.</p>
 
-  <div class="timeline-wrap">
-    <!-- Chart visual -->
-    <div style="overflow-x: auto;">
-      <div style="min-width: 560px;">
-        <div style="display: flex; align-items: flex-end; gap: 8px; height: 220px; border-bottom: 2px solid var(--divider); border-left: 2px solid var(--divider); padding: 12px 16px 0 8px; margin-bottom: 0; position: relative;">
-
-          <!-- Y-axis labels -->
-          <div style="position: absolute; left: -40px; top: 0; height: 100%; display: flex; flex-direction: column; justify-content: space-between; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); padding: 8px 0 2px;">
-            <span>5.5</span>
-            <span>4.5</span>
-            <span>3.5</span>
-            <span>2.5</span>
-          </div>
-
-          <!-- DATA: Palma estimado Colombia post-transferencias DANE-GEIH + WID proxy -->
-          <!-- Scale: max 5.5, min 2.5 = range 3.0 → 200px height, 1 unit = 66.7px -->
-          <!-- Values: 2002≈4.9, 2004≈4.7, 2006≈4.5, 2008≈4.4, 2010≈4.6, 2012≈4.1, 2014≈3.9, 2016≈3.8, 2018≈3.9, 2019≈3.7, 2020≈4.1 (COVID), 2021≈3.9, 2022≈3.8, 2023≈3.7 -->
-
-          <div class="tc-bar-wrap">
-            <div class="tc-val">4.9</div>
-            <div class="tc-bar" style="height:159px; background: var(--rust);"></div>
-            <div class="tc-year">2002</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">4.7</div>
-            <div class="tc-bar" style="height:146px; background: var(--rust);"></div>
-            <div class="tc-year">2004</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">4.5</div>
-            <div class="tc-bar" style="height:133px; background: #c47050;"></div>
-            <div class="tc-year">2006</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">4.4</div>
-            <div class="tc-bar" style="height:126px; background: #c47050;"></div>
-            <div class="tc-year">2008</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">4.6</div>
-            <div class="tc-bar" style="height:139px; background: #c47050;"></div>
-            <div class="tc-year">2010</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">4.1</div>
-            <div class="tc-bar" style="height:106px; background: var(--amber);"></div>
-            <div class="tc-year">2012</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">3.9</div>
-            <div class="tc-bar" style="height:93px; background: var(--amber);"></div>
-            <div class="tc-year">2014</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">3.8</div>
-            <div class="tc-bar" style="height:86px; background: var(--amber);"></div>
-            <div class="tc-year">2016</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">3.9</div>
-            <div class="tc-bar" style="height:93px; background: var(--amber);"></div>
-            <div class="tc-year">2018</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">3.7</div>
-            <div class="tc-bar" style="height:79px; background: var(--amber);"></div>
-            <div class="tc-year">2019</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">4.1</div>
-            <div class="tc-bar" style="height:106px; background: var(--slate); opacity: 0.85;"></div>
-            <div class="tc-year">2020<br><span style="color: var(--slate);">COVID</span></div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">3.9</div>
-            <div class="tc-bar" style="height:93px; background: var(--forest);"></div>
-            <div class="tc-year">2021</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">3.8</div>
-            <div class="tc-bar" style="height:86px; background: var(--forest);"></div>
-            <div class="tc-year">2022</div>
-          </div>
-          <div class="tc-bar-wrap">
-            <div class="tc-val">3.7</div>
-            <div class="tc-bar" style="height:79px; background: var(--forest);"></div>
-            <div class="tc-year">2023</div>
-          </div>
-
-        </div><!-- bars end -->
+    <!-- Unified Tufte Line Chart -->
+    <div class="tufte-chart-container" id="tufte-chart-block">
+      <div class="tufte-chart-title">Trayectoria de la desigualdad (2002–2023)</div>
+      <div class="tufte-chart-subtitle">RAZÓN DE PALMA POST-TRANSFERENCIAS · SERIE DANE-GEIH EMPALMADA</div>
+      
+      <div class="chart-svg-wrap">
+        <div id="tufte-line-chart" aria-label="Gráfico de línea histórica que muestra el Índice de Palma en Colombia desde 2002 (4.9) hasta 2023 (3.7), mostrando una caída del 24% interrumpida por la pandemia del COVID-19 en 2020.">
+          <!-- Populated by JS -->
+        </div>
       </div>
+      
+      <!-- Accessible Tooltip -->
+      <div class="chart-tooltip" id="chart-tooltip"></div>
     </div>
-
-    <div class="tc-legend">
-      <div class="tc-legend-item"><div class="tc-dot" style="background: var(--rust);"></div> Crisis alta (Palma &gt; 4.5)</div>
-      <div class="tc-legend-item"><div class="tc-dot" style="background: var(--amber);"></div> Mejora gradual (Palma 3.7–4.4)</div>
-      <div class="tc-legend-item"><div class="tc-dot" style="background: var(--slate);"></div> Regresión COVID-19</div>
-      <div class="tc-legend-item"><div class="tc-dot" style="background: var(--forest);"></div> Recuperación reciente</div>
-    </div>
-  </div>
 
   <div class="stat-row fade-up delay-2">
     <div class="stat-card red">
@@ -1183,7 +1334,7 @@
   </div>
 </section>
 
-</div><!-- /page -->
+</main><!-- /page -->
 
 <footer>
   <div class="footer-inner">
@@ -1200,6 +1351,272 @@
     Esta infografía no expresa posición política alguna. Es una lectura técnica de datos públicos. · Elaborado con datos abiertos oficiales colombianos.
   </div>
 </footer>
+
+<script>
+  // 1. DATA DEFINITIONS
+  const HISTORICAL_DATA = [
+    { year: 2002, value: 4.9, phase: 'crisis', note: 'Punto de partida (crisis alta)' },
+    { year: 2004, value: 4.7, phase: 'crisis', note: 'Descenso lento inicial' },
+    { year: 2006, value: 4.5, phase: 'crisis', note: 'Estabilización' },
+    { year: 2008, value: 4.4, phase: 'mejora', note: 'Inicio de mejora progresiva' },
+    { year: 2010, value: 4.6, phase: 'crisis', note: 'Breve retroceso/rebote' },
+    { year: 2012, value: 4.1, phase: 'mejora', note: 'Expansión de salarios inferiores' },
+    { year: 2014, value: 3.9, phase: 'mejora', note: 'Consolidación de mejoras' },
+    { year: 2016, value: 3.8, phase: 'mejora', note: 'Mínimo del ciclo de materias primas' },
+    { year: 2018, value: 3.9, phase: 'mejora', note: 'Estancamiento pre-pandemia' },
+    { year: 2019, value: 3.7, phase: 'mejora', note: 'Mínimo histórico pre-COVID' },
+    { year: 2020, value: 4.1, phase: 'regresion', note: 'Severa regresión por Pandemia COVID-19' },
+    { year: 2021, value: 3.9, phase: 'recuperacion', note: 'Recuperación económica gradual' },
+    { year: 2022, value: 3.8, phase: 'recuperacion', note: 'Recuperación del mercado de empleo' },
+    { year: 2023, value: 3.7, phase: 'recuperacion', note: 'Retorno al mínimo histórico post-COVID' }
+  ];
+
+  const PALMA_DISTRIBUTION = {
+    poorShare: 12,
+    middleShare: 43,
+    richShare: 45
+  };
+
+  // Cookie SVG Template
+  function getCookieSVG() {
+    return `
+      <svg viewBox="0 0 20 20" class="cookie-svg" aria-hidden="true" width="18" height="18">
+        <circle cx="10" cy="10" r="9" fill="#DCAE72" stroke="#6B3A1F" stroke-width="1.2"/>
+        <circle cx="6" cy="7" r="1.5" fill="#6B3A1F"/>
+        <circle cx="14" cy="6" r="1.2" fill="#6B3A1F"/>
+        <circle cx="10" cy="11" r="1.5" fill="#6B3A1F"/>
+        <circle cx="6" cy="13" r="1.2" fill="#6B3A1F"/>
+        <circle cx="14" cy="13" r="1.5" fill="#6B3A1F"/>
+      </svg>
+    `;
+  }
+
+  // 2. RENDER COOKIE GRIDS
+  function renderCookieGrids() {
+    const poorContainer = document.getElementById('cookie-grid-poor');
+    const middleContainer = document.getElementById('cookie-grid-middle');
+    const richContainer = document.getElementById('cookie-grid-rich');
+
+    if (poorContainer) {
+      poorContainer.innerHTML = Array(PALMA_DISTRIBUTION.poorShare).fill(getCookieSVG()).join('');
+    }
+    if (middleContainer) {
+      middleContainer.innerHTML = Array(PALMA_DISTRIBUTION.middleShare).fill(getCookieSVG()).join('');
+    }
+    if (richContainer) {
+      richContainer.innerHTML = Array(PALMA_DISTRIBUTION.richShare).fill(getCookieSVG()).join('');
+    }
+  }
+
+  // 3. RENDER WAFFLE GRID
+  function renderWaffleGrid() {
+    const grid = document.getElementById('waffle-grid');
+    if (!grid) return;
+
+    let cellsHTML = '';
+    
+    // We have 100 cells.
+    // 12 poor cells (1-12)
+    // 43 middle cells (13-55)
+    // 45 rich cells (56-100)
+    for (let i = 0; i < 100; i++) {
+      let groupClass = '';
+      let groupName = '';
+      if (i < PALMA_DISTRIBUTION.poorShare) {
+        groupClass = 'poor';
+        groupName = '40% más pobre (12% del ingreso)';
+      } else if (i < PALMA_DISTRIBUTION.poorShare + PALMA_DISTRIBUTION.middleShare) {
+        groupClass = 'middle';
+        groupName = 'Clase media 50% (43% del ingreso)';
+      } else {
+        groupClass = 'rich';
+        groupName = '10% más rico (45% del ingreso)';
+      }
+      cellsHTML += `<div class="waffle-cell ${groupClass}" title="Porción ${i+1}%: Pertenece al ${groupName}"></div>`;
+    }
+    grid.innerHTML = cellsHTML;
+  }
+
+  // 4. RENDER TUFTE RANGE-FRAME LINE CHART
+  function renderTufteLineChart() {
+    const container = document.getElementById('tufte-line-chart');
+    const tooltip = document.getElementById('chart-tooltip');
+    if (!container) return;
+
+    const data = HISTORICAL_DATA;
+    const years = data.map(d => d.year);
+    const values = data.map(d => d.value);
+
+    const minYear = Math.min(...years);
+    const maxYear = Math.max(...years);
+    const minValue = Math.min(...values);
+    const maxValue = Math.max(...values);
+
+    // Grid sizes
+    const width = 640;
+    const height = 260;
+    const paddingLeft = 60;
+    const paddingRight = 40;
+    const paddingTop = 30;
+    const paddingBottom = 40;
+
+    const chartWidth = width - paddingLeft - paddingRight;
+    const chartHeight = height - paddingTop - paddingBottom;
+
+    // Scaling helpers
+    const getX = (year) => paddingLeft + ((year - minYear) / (maxYear - minYear)) * chartWidth;
+    const getY = (val) => paddingTop + chartHeight - ((val - minValue) / (maxValue - minValue)) * chartHeight;
+
+    // Draw lines
+    let dPath = '';
+    data.forEach((d, idx) => {
+      const x = getX(d.year);
+      const y = getY(d.value);
+      if (idx === 0) {
+        dPath += `M ${x} ${y}`;
+      } else {
+        dPath += ` L ${x} ${y}`;
+      }
+    });
+
+    // Generate Axis ticks and lines (Tufte Range-Frame)
+    // Vertical Range-Frame: only drawn between actual min and max data values!
+    const yAxisLine = `<line x1="${paddingLeft - 10}" y1="${getY(minValue)}" x2="${paddingLeft - 10}" y2="${getY(maxValue)}" class="tufte-axis-line" />`;
+    // Horizontal Range-Frame: only drawn between actual min and max years!
+    const xAxisLine = `<line x1="${getX(minYear)}" y1="${height - paddingBottom + 10}" x2="${getX(maxYear)}" y2="${height - paddingBottom + 10}" class="tufte-axis-line" />`;
+
+    // Ticks & Labels
+    let yTicks = '';
+    // Let's generate a clean set of Y axis markers: 3.7, 4.1, 4.5, 4.9
+    const yMarkers = [3.7, 4.1, 4.5, 4.9];
+    yMarkers.forEach(val => {
+      const y = getY(val);
+      yTicks += `
+        <line x1="${paddingLeft - 15}" y1="${y}" x2="${paddingLeft - 10}" y2="${y}" class="tufte-axis-line" />
+        <text x="${paddingLeft - 20}" y="${y + 3}" class="tufte-axis-text y-label">${val.toFixed(1)}</text>
+      `;
+    });
+
+    let xTicks = '';
+    // Show key years: 2002, 2006, 2010, 2014, 2018, 2020, 2023
+    const xMarkers = [2002, 2006, 2010, 2014, 2018, 2020, 2023];
+    xMarkers.forEach(yr => {
+      const x = getX(yr);
+      xTicks += `
+        <line x1="${x}" y1="${height - paddingBottom + 10}" x2="${x}" y2="${height - paddingBottom + 15}" class="tufte-axis-line" />
+        <text x="${x}" y="${height - paddingBottom + 28}" class="tufte-axis-text">${yr}</text>
+      `;
+    });
+
+    // Draw Data Points
+    let pointsHTML = '';
+    data.forEach(d => {
+      const x = getX(d.year);
+      const y = getY(d.value);
+      pointsHTML += `
+        <circle cx="${x}" cy="${y}" r="5" 
+          class="tufte-data-point ${d.phase}" 
+          tabindex="0"
+          role="button"
+          aria-label="Año ${d.year}: Índice de Palma de ${d.value}. ${d.note}"
+          data-year="${d.year}"
+          data-value="${d.value}"
+          data-note="${d.note}"
+          data-phase="${d.phase}"
+        />
+      `;
+    });
+
+    // Integrate annotations directly on the chart (Tufte visual integration)
+    // 2002: Start
+    // 2020: COVID
+    // 2023: Recovery/Min
+    const annotationsHTML = `
+      <!-- COVID Annotation -->
+      <line x1="${getX(2020)}" y1="${getY(4.1) + 8}" x2="${getX(2020)}" y2="${getY(4.1) + 40}" class="tufte-leader-line" />
+      <rect x="${getX(2020) - 45}" y="${getY(4.1) + 40}" width="90" height="24" class="tufte-annotation-bg" />
+      <text x="${getX(2020)}" y="${getY(4.1) + 54}" class="tufte-annotation" text-anchor="middle" font-weight="bold">Rebote COVID</text>
+
+      <!-- 2002 Start -->
+      <line x1="${getX(2002) + 6}" y1="${getY(4.9)}" x2="${getX(2002) + 30}" y2="${getY(4.9)}" class="tufte-leader-line" />
+      <text x="${getX(2002) + 34}" y="${getY(4.9) + 4}" class="tufte-annotation" text-anchor="start">Punto de partida (4.9)</text>
+
+      <!-- 2023 Min -->
+      <line x1="${getX(2023) - 6}" y1="${getY(3.7)}" x2="${getX(2023) - 30}" y2="${getY(3.7)}" class="tufte-leader-line" />
+      <text x="${getX(2023) - 34}" y="${getY(3.7) + 4}" class="tufte-annotation" text-anchor="end">Mínimo Histórico (3.7)</text>
+    `;
+
+    // Render SVG
+    container.innerHTML = `
+      <svg width="100%" height="100%" viewBox="0 0 ${width} ${height}" class="tufte-svg" style="max-width: ${width}px;">
+        <!-- Axes (Tufte Range-Frame) -->
+        ${yAxisLine}
+        ${xAxisLine}
+        ${yTicks}
+        ${xTicks}
+
+        <!-- Connection Path -->
+        <path d="${dPath}" class="tufte-data-line" />
+
+        <!-- Direct Annotations -->
+        ${annotationsHTML}
+
+        <!-- Data circles -->
+        ${pointsHTML}
+      </svg>
+    `;
+
+    // Add interactivity
+    const points = container.querySelectorAll('.tufte-data-point');
+    points.forEach(pt => {
+      const showTooltip = (e) => {
+        const year = pt.getAttribute('data-year');
+        const val = pt.getAttribute('data-value');
+        const note = pt.getAttribute('data-note');
+        const phase = pt.getAttribute('data-phase');
+
+        // Color tag mapping
+        let phaseText = '';
+        if (phase === 'crisis') phaseText = 'Crisis alta (> 4.5)';
+        else if (phase === 'mejora') phaseText = 'Mejora gradual (3.7–4.4)';
+        else if (phase === 'regresion') phaseText = 'Regresión COVID-19';
+        else if (phase === 'recuperacion') phaseText = 'Recuperación reciente';
+
+        tooltip.innerHTML = `
+          <strong>Año ${year}</strong>
+          <div>Palma: <strong>${val}</strong></div>
+          <div style="font-size:10px; margin-top:4px; opacity:0.85; font-weight:500;">${phaseText}</div>
+          <div style="font-size:10px; margin-top:2px; font-style:italic; opacity:0.75; line-height:1.2;">${note}</div>
+        `;
+        
+        // Position tooltip
+        const rect = pt.getBoundingClientRect();
+        const parentRect = container.parentElement.getBoundingClientRect();
+        
+        // Set coordinates relative to chart block
+        tooltip.style.left = `${rect.left - parentRect.left + 15}px`;
+        tooltip.style.top = `${rect.top - parentRect.top - 45}px`;
+        tooltip.style.opacity = '1';
+      };
+
+      const hideTooltip = () => {
+        tooltip.style.opacity = '0';
+      };
+
+      pt.addEventListener('mouseenter', showTooltip);
+      pt.addEventListener('focus', showTooltip);
+      pt.addEventListener('mouseleave', hideTooltip);
+      pt.addEventListener('blur', hideTooltip);
+    });
+  }
+
+  // 5. RUN INITIALIZATIONS
+  document.addEventListener('DOMContentLoaded', () => {
+    renderCookieGrids();
+    renderWaffleGrid();
+    renderTufteLineChart();
+  });
+</script>
 
 </body>
 </html>
