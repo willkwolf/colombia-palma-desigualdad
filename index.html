@@ -686,22 +686,103 @@
     font-size: 13px;
   }
 
-  /* ── FOOTER ── */
+  /* ── FOOTER & MUSEUM PLAQUE ── */
   footer {
     background: var(--ink);
-    color: rgba(245,237,216,0.45);
-    padding: 40px 0;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    line-height: 1.8;
-    position: relative; z-index: 1;
+    color: rgba(245,237,216,0.6);
+    padding: 64px 32px;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(245,237,216,0.1);
   }
-  footer a { color: rgba(232,168,37,0.7); text-decoration: none; }
   .footer-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 32px;
+  }
+  .museum-plaque-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #231B10;
+    border: 1px solid rgba(245,237,216,0.15);
+    border-left: 4px solid var(--gold);
+    padding: 40px;
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: left;
+  }
+  .plaque-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .plaque-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 28px;
+    line-height: 1.25;
+    border-bottom: 1px solid rgba(245,237,216,0.1);
+    padding-bottom: 16px;
+  }
+  .plaque-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    row-gap: 18px;
+    column-gap: 24px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  @media (max-width: 768px) {
+    .museum-plaque-container {
+      padding: 24px 20px;
+    }
+    .plaque-grid {
+      grid-template-columns: 1fr;
+      row-gap: 12px;
+    }
+    .plaque-label {
+      border-bottom: 1px dashed rgba(245,237,216,0.1);
+      padding-bottom: 4px;
+      margin-top: 10px;
+    }
+  }
+  .plaque-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .plaque-value {
+    color: rgba(245,237,216,0.85);
+  }
+  .plaque-value a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--gold);
+    transition: opacity 0.2s ease;
+  }
+  .plaque-value a:hover {
+    opacity: 0.8;
+  }
+  .plaque-license {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245,237,216,0.1);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(245,237,216,0.45);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   /* ANIMATIONS */
@@ -1350,17 +1431,34 @@
 
 <footer>
   <div class="footer-inner">
-    <strong style="color: rgba(245,237,216,0.7);">Fuentes y metodología</strong><br><br>
-    · DANE – Gran Encuesta Integrada de Hogares (GEIH) 2002–2023, serie empatada MESEP. Cifras oficiales de pobreza monetaria y Gini.<br>
-    · DNP / DANE – Pobreza monetaria 2023, agosto 2024.<br>
-    · BanRep – "Changes in Income Inequality in Colombia 2010–2019", ESPE 101, 2022.<br>
-    · CEPAL – Base estadística de desigualdad, América Latina y el Caribe, 2022.<br>
-    · WID.world – World Inequality Database, Colombia series 2021+.<br>
-    · Cobham &amp; Sumner (2013) – "Is It All About the Tails? The Palma Measure of Income Inequality", CGD Working Paper.<br>
-    · Razon Pública (2013) – "¿Qué tanta desigualdad hay realmente en Colombia?"<br>
-    · ScienceDirect / Desigualdad y espacio en Colombia, diciembre 2023.<br><br>
-    <strong style="color: rgba(245,237,216,0.5);">Nota metodológica:</strong> Los valores del Palma presentados son estimaciones derivadas de la participación de ingreso por deciles reportada en GEIH/MESEP, complementadas con fuentes secundarias de WID y BanRep. Las cifras exactas varían levemente según metodología de imputación de ingresos y año de empalme. El ejercicio de "100 galletas" usa participaciones de ingreso aproximadas (top 10% ≈ 45%, middle 50% ≈ 43%, bottom 40% ≈ 12%) coherentes con un Palma de ~3.7 post-transferencias 2022/23.<br><br>
-    Esta infografía no expresa posición política alguna. Es una lectura técnica de datos públicos. · Elaborado con datos abiertos oficiales colombianos.
+    <div class="museum-plaque-container" tabindex="0" aria-label="Ficha técnica de la infografía analítica como pieza de museo de datos">
+      <div class="plaque-eyebrow">Ficha Técnica · Artefacto Analítico</div>
+      <div class="plaque-title">La Galleta Colombiana: Razón de Palma y Distribución del Ingreso</div>
+      
+      <div class="plaque-grid">
+        <div class="plaque-label">Año</div>
+        <div class="plaque-value">2026 · Release v2.0 (Fase Kaizen de Archivo)</div>
+        
+        <div class="plaque-label">Métodos y Referencias</div>
+        <div class="plaque-value">
+          · <strong>Razón de Palma post-transferencias</strong> (Decil 10 / Deciles 1-4) como estimador robusto de desigualdad extrema en las colas de la distribución.<br>
+          · <strong>Visualización e Integridad Gráfica</strong>: Waffle grid de celdas unitarias (Lie Factor = 1.0) y Tufte Range-Frame Line Chart con anotaciones integradas bajo directrices de Edward Tufte.<br>
+          · <strong>Fuentes Oficiales y Datos de Entrada</strong>: DANE — Gran Encuesta Integrada de Hogares (GEIH) 2002–2023 (serie de microdatos empalmada MESEP) · DNP — Reportes de Pobreza Monetaria y Multidimensional (2024).<br>
+          · <strong>Referentes Teóricos y Bibliografía Clave</strong>: Gabriel Palma (Cambridge University) · Alex Cobham &amp; Andy Sumner (Center for Global Development, 2013) · Banco de la República (ESPE 101, 2022) · CEPAL (Base estadística de desigualdad) · World Inequality Database (WID.world) · Edward Tufte (The Visual Display of Quantitative Information).
+        </div>
+        
+        <div class="plaque-label">Repositorio</div>
+        <div class="plaque-value">
+          <a href="https://github.com/willkwolf/colombia-palma-desigualdad.git" target="_blank" rel="noopener noreferrer">github.com/willkwolf/colombia-palma-desigualdad</a>
+          <div style="font-size: 11px; color: rgba(245,237,216,0.45); margin-top: 4px;">Explore la estructura de datos, el pipeline de GitHub Actions y el debate metodológico en profundidad.</div>
+        </div>
+      </div>
+      
+      <div class="plaque-license">
+        <span>Creative Commons BY-SA 4.0 · Colectivo de Investigación</span>
+        <span>Bogotá · Colombia</span>
+      </div>
+    </div>
   </div>
 </footer>
 
