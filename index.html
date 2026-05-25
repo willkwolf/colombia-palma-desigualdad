@@ -12,7 +12,7 @@
     --paper: #EDE4CC;
     --ink: #1A1208;
     --brown: #6B3A1F;
-    --amber: #954A00; /* WCAG 2.1 AA compliant (> 4.8:1 contrast) */
+    --amber: #8B4500; /* WCAG 2.1 AA compliant (> 5.1:1 contrast on beige paper) */
     --gold: #E8A825;
     --rust: #B0351B; /* WCAG 2.1 AA compliant danger/alert contrast (> 5:1) */
     --forest: #2D5A3D;
@@ -545,14 +545,14 @@
   }
   .col-box.is { background: #edf4ef; border-left: 4px solid var(--forest); }
   .col-box.not { background: #fdf0ee; border-left: 4px solid var(--rust); }
-  .col-box h4 {
+  .col-box h3 {
     font-family: 'Playfair Display', serif;
     font-size: 17px;
     font-weight: 700;
     margin-bottom: 16px;
   }
-  .col-box.is h4 { color: var(--forest); }
-  .col-box.not h4 { color: var(--rust); }
+  .col-box.is h3 { color: var(--forest); }
+  .col-box.not h3 { color: var(--rust); }
   .col-list {
     list-style: none;
     font-size: 13.5px;
@@ -618,7 +618,7 @@
     padding: 28px 32px;
     margin: 32px 0;
   }
-  .cookie-note h4 {
+  .cookie-note h3 {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     font-weight: 700;
@@ -661,7 +661,7 @@
     margin: 32px 0;
     background: rgba(184,75,44,0.04);
   }
-  .warning-box h4 {
+  .warning-box h3 {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 2px;
@@ -778,7 +778,7 @@
     border-top: 1px solid rgba(245,237,216,0.1);
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: rgba(245,237,216,0.45);
+    color: rgba(245,237,216,0.75);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -830,6 +830,18 @@
   .skip-link:focus {
     top: 16px;
     outline: 2px solid var(--ink);
+  }
+
+  /* Kaizen Accessible Focus States */
+  .cookie-group:focus-visible,
+  .unified-waffle-wrap:focus-visible,
+  .palma-formula-container:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+  }
+  .museum-plaque-container:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
   }
 
   /* COOKIE GRID & SVG COOKIES */
@@ -994,6 +1006,10 @@
   .tufte-data-touch-target:focus {
     outline: none;
   }
+  .tufte-data-touch-target:focus-visible {
+    outline: 2px dashed var(--brown);
+    outline-offset: 2px;
+  }
   
   .tufte-annotation {
     font-family: 'DM Sans', sans-serif;
@@ -1042,6 +1058,137 @@
     .tufte-chart-container { padding: 20px 16px; }
   }
 
+  /* PALMA FORMULA BEAUTIFICATION */
+  .palma-formula-container {
+    background: var(--paper);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 32px;
+    margin: 32px 0;
+    text-align: center;
+    box-shadow: inset 0 1px 3px rgba(107, 58, 31, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .palma-formula-container:hover {
+    border-color: rgba(107, 58, 31, 0.35);
+    box-shadow: 0 6px 24px rgba(107, 58, 31, 0.08);
+  }
+  .palma-formula-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rust), var(--amber));
+  }
+  .formula-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .formula-equation-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 24px auto;
+    max-width: 720px;
+  }
+  .formula-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 3.8vw, 38px);
+    font-weight: 700;
+    color: var(--brown);
+  }
+  .formula-equals {
+    color: var(--muted);
+    opacity: 0.8;
+  }
+  .formula-fraction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 480px;
+  }
+  .formula-numerator {
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .numerator-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 2.4vw, 24px);
+    font-weight: 700;
+    color: var(--rust);
+    line-height: 1.25;
+  }
+  .numerator-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+  }
+  .formula-denominator {
+    width: 100%;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .denominator-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 2.4vw, 24px);
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1.25;
+  }
+  .denominator-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+  }
+  .formula-footnote {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 24px;
+    line-height: 1.5;
+  }
+  @media (max-width: 640px) {
+    .formula-equation-wrapper {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .formula-left {
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    .formula-fraction {
+      width: 100%;
+    }
+    .numerator-text, .denominator-text {
+      font-size: clamp(14px, 4vw, 18px);
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1064,27 +1211,40 @@
 <main class="page" id="main-content">
 
 <!-- ═══════════════════════════════ 01. QUÉ ES PALMA ═══════════════════════ -->
-<section>
+<section id="sec-indicator" aria-labelledby="heading-indicator">
   <div class="section-label">01 — El indicador</div>
-  <h2>El Índice de Palma: una división que lo dice todo</h2>
+  <h2 id="heading-indicator">El Índice de Palma: una división que lo dice todo</h2>
 
   <p>El economista Gabriel Palma (Cambridge) descubrió algo incómodo: en casi todos los países del mundo, el 50% del medio de la distribución captura siempre <strong>entre el 45% y el 55%</strong> del ingreso nacional. Es casi una constante. La desigualdad real ocurre en los extremos. Así nació el Índice de Palma (formalizado por Cobham &amp; Sumner, 2013):</p>
 
-  <div style="background: var(--paper); padding: 28px 32px; border-radius: 3px; margin: 28px 0; text-align: center;">
-    <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 12px; letter-spacing: 2px; text-transform: uppercase;">La fórmula</div>
-    <div style="font-family: 'Playfair Display', serif; font-size: clamp(20px, 3vw, 32px); font-weight: 700; color: var(--brown);">
-      Palma = <span style="color: var(--rust);">Ingreso total del 10% más rico</span> <span style="color: var(--muted); font-size: 0.8em;">÷</span> <span style="color: var(--amber);">Ingreso total del 40% más pobre</span>
+  <div class="palma-formula-container">
+    <div class="formula-title">La Razón de Palma como Cociente</div>
+    <div class="formula-equation-wrapper">
+      <div class="formula-left">
+        <span>Palma</span>
+        <span class="formula-equals">=</span>
+      </div>
+      <div class="formula-fraction">
+        <div class="formula-numerator">
+          <span class="numerator-text">Ingreso total del 10% más rico</span>
+          <span class="numerator-sub">Decil superior (D10) de la población</span>
+        </div>
+        <div class="formula-denominator">
+          <span class="denominator-text">Ingreso total del 40% más pobre</span>
+          <span class="denominator-sub">Cuatro deciles inferiores (D1 a D4)</span>
+        </div>
+      </div>
     </div>
-    <div style="font-size: 13px; color: var(--muted); margin-top: 14px;">La clase media (50% restante) se <em>excluye</em> deliberadamente — es el "ruido estable" del sistema.</div>
+    <div class="formula-footnote">La clase media (50% restante) se <em>excluye</em> deliberadamente — es el "ruido estable" del sistema.</div>
   </div>
 
   <p>Un Palma de <strong>1.0</strong> significa igualdad perfecta entre los extremos. Un Palma de <strong>4.0</strong> significa que el 10% más rico concentra el cuádruple del ingreso que el 40% más pobre. Noruega ronda <span class="inline-mono">0.9</span>. Colombia ha oscilado entre <span class="inline-mono">3.7</span> y <span class="inline-mono">5.0</span> en los últimos veinte años.</p>
 </section>
 
 <!-- ═══════════════════════════════ 02. LAS GALLETAS ═══════════════════════ -->
-<section>
+<section id="sec-analogy" aria-labelledby="heading-analogy">
   <div class="section-label">02 — La analogía</div>
-  <h2>Imagina 100 galletas para repartir entre 10 personas</h2>
+  <h2 id="heading-analogy">Imagina 100 galletas para repartir entre 10 personas</h2>
 
   <p>Para hacer el ejercicio concreto, representemos a <strong>Colombia como una reunión de 10 personas</strong>, y el ingreso total del país como <strong>100 galletas de igual tamaño</strong>. Cifras basadas en participaciones de ingreso de la GEIH-DANE para 2022–2023 (promedio post-transferencias).</p>
 
@@ -1162,7 +1322,7 @@
 
   <!-- ¿Qué es la galleta? -->
   <div class="cookie-note fade-up delay-2">
-    <h4>🔬 ¿De qué está hecha la galleta? (El contenido nutricional)</h4>
+    <h3>🔬 ¿De qué está hecha la galleta? (El contenido nutricional)</h3>
     <p style="font-size:14px; color: var(--muted); margin-bottom: 16px;">El Palma mide <strong>ingreso monetario disponible del hogar</strong> — no riqueza, no patrimonio. Esto importa. La encuesta GEIH del DANE captura lo siguiente:</p>
     <div class="nutrition-grid">
       <div class="nutrition-item">
@@ -1201,9 +1361,9 @@
 </section>
 
 <!-- ═══════════════════════════════ 03. EVOLUCIÓN ══════════════════════════ -->
-<section>
+<section id="sec-history" aria-labelledby="heading-history">
   <div class="section-label">03 — Trayectoria Histórica</div>
-  <h2>Evolución temporal: tendencias, avances y límites distributivos</h2>
+  <h2 id="heading-history">Evolución temporal: tendencias, avances y límites distributivos</h2>
 
   <p>La serie disponible de Palma post-transferencias para Colombia (DANE-GEIH, metodología MESEP empatada 2002–2023) muestra una trayectoria con tres actos claramente diferenciados.</p>
 
@@ -1249,9 +1409,9 @@
 </section>
 
 <!-- ═══════════════════════════════ 04. COMPARADOR ════════════════════════ -->
-<section>
+<section id="sec-compare" aria-labelledby="heading-compare">
   <div class="section-label">04 — Contexto internacional</div>
-  <h2>Colombia en el mapa global de la desigualdad</h2>
+  <h2 id="heading-compare">Colombia en el mapa global de la desigualdad</h2>
   <p>¿Es Colombia rara, o simplemente latinoamericana? El Palma nos permite comparar sin trampa.</p>
 
   <table class="compare-table">
@@ -1328,14 +1488,14 @@
 </section>
 
 <!-- ═══════════════════════════════ 05. QUÉ SÍ / QUÉ NO ══════════════════ -->
-<section>
+<section id="sec-limits" aria-labelledby="heading-limits">
   <div class="section-label">05 — Límites del indicador</div>
-  <h2>Lo que el Palma ve — y lo que tiene puntos ciegos</h2>
+  <h2 id="heading-limits">Lo que el Palma ve — y lo que tiene puntos ciegos</h2>
   <p>Para no estirar el indicador más allá de sus costuras, aquí está el mapa honesto de sus capacidades.</p>
 
   <div class="two-col">
     <div class="col-box is">
-      <h4>✅ Sí dice el Palma</h4>
+      <h3>✅ Sí dice el Palma</h3>
       <ul class="col-list">
         <li>La brecha de <em>ingreso corriente</em> entre los extremos de la distribución en un año dado.</li>
         <li>Si esa brecha aumentó o disminuyó en el tiempo, año a año.</li>
@@ -1345,7 +1505,7 @@
       </ul>
     </div>
     <div class="col-box not">
-      <h4>❌ No dice el Palma</h4>
+      <h3>❌ No dice el Palma</h3>
       <ul class="col-list">
         <li>Nada sobre <strong>riqueza patrimonial</strong> (tierras, acciones, inmuebles). La desigualdad real es bastante mayor.</li>
         <li>Nada sobre desigualdad <em>dentro</em> del decil 10. El 1% más rico es un mundo aparte.</li>
@@ -1358,7 +1518,7 @@
   </div>
 
   <div class="warning-box">
-    <h4>⚠ Consideraciones clave para evitar sesgos analíticos al interpretar el Palma</h4>
+    <h3>⚠ Consideraciones clave para evitar sesgos analíticos al interpretar el Palma</h3>
     <ul class="warning-list">
       <li><strong>"El Palma bajó, por lo tanto la desigualdad desapareció."</strong> Falso. Un Palma de 3.7 sigue siendo una brecha abismal en términos de calidad de vida y oportunidades.</li>
       <li><strong>"El decil 10 son los millonarios."</strong> No exactamente. Las encuestas de hogares <em>subreportan</em> los ingresos del 0.1% más rico. El decil 10 en GEIH incluye muchos profesionales con buen salario, pero los verdaderos superricos están estadísticamente invisibles.</li>
@@ -1370,9 +1530,9 @@
 </section>
 
 <!-- ═══════════════════════════════ 06. ESTADO DEL ARTE ══════════════════ -->
-<section>
+<section id="sec-current" aria-labelledby="heading-current">
   <div class="section-label">06 — Estado del arte 2023–2024</div>
-  <h2>La radiografía actual: qué mejoró, qué no</h2>
+  <h2 id="heading-current">La radiografía actual: qué mejoró, qué no</h2>
 
   <div class="stat-row fade-up delay-1">
     <div class="stat-card green">
@@ -1403,9 +1563,9 @@
 </section>
 
 <!-- ═══════════════════════════════ 07. RESUMEN GALLETAS ══════════════════ -->
-<section>
+<section id="sec-closing" aria-labelledby="heading-closing">
   <div class="section-label">07 — Cierre</div>
-  <h2>La escena final de las galletas</h2>
+  <h2 id="heading-closing">La escena final de las galletas</h2>
 
   <p>Si en 2002 la repartición era así: <strong>1 persona lleva 49 galletas, y las otras 4 del fondo se reparten 10</strong> — un Palma de casi 5 — y hoy esa persona lleva <strong>45</strong> y las otras 4 del fondo tienen <strong>12</strong>... ¿es un progreso? <strong>Técnicamente, sí.</strong></p>
 
@@ -1436,27 +1596,25 @@
       <div class="plaque-title">La Galleta Colombiana: Razón de Palma y Distribución del Ingreso</div>
       
       <div class="plaque-grid">
-        <div class="plaque-label">Año</div>
-        <div class="plaque-value">2026 · Release v2.0 (Fase Kaizen de Archivo)</div>
-        
-        <div class="plaque-label">Métodos y Referencias</div>
-        <div class="plaque-value">
-          · <strong>Razón de Palma post-transferencias</strong> (Decil 10 / Deciles 1-4) como estimador robusto de desigualdad extrema en las colas de la distribución.<br>
-          · <strong>Visualización e Integridad Gráfica</strong>: Waffle grid de celdas unitarias (Lie Factor = 1.0) y Tufte Range-Frame Line Chart con anotaciones integradas bajo directrices de Edward Tufte.<br>
-          · <strong>Fuentes Oficiales y Datos de Entrada</strong>: DANE — Gran Encuesta Integrada de Hogares (GEIH) 2002–2023 (serie de microdatos empalmada MESEP) · DNP — Reportes de Pobreza Monetaria y Multidimensional (2024).<br>
-          · <strong>Referentes Teóricos y Bibliografía Clave</strong>: Gabriel Palma (Cambridge University) · Alex Cobham &amp; Andy Sumner (Center for Global Development, 2013) · Banco de la República (ESPE 101, 2022) · CEPAL (Base estadística de desigualdad) · World Inequality Database (WID.world) · Edward Tufte (The Visual Display of Quantitative Information).
-        </div>
+        <div class="plaque-label">Autor</div>
+        <div class="plaque-value">William Camilo Artunduaga Viana</div>
+
+        <div class="plaque-label">Ubicación</div>
+        <div class="plaque-value">Cali · Colombia</div>
+
+        <div class="plaque-label">Metodología</div>
+        <div class="plaque-value">Razón de Palma post-transferencias (DANE / DNP)</div>
         
         <div class="plaque-label">Repositorio</div>
         <div class="plaque-value">
           <a href="https://github.com/willkwolf/colombia-palma-desigualdad.git" target="_blank" rel="noopener noreferrer">github.com/willkwolf/colombia-palma-desigualdad</a>
-          <div style="font-size: 11px; color: rgba(245,237,216,0.45); margin-top: 4px;">Explore la estructura de datos, el pipeline de GitHub Actions y el debate metodológico en profundidad.</div>
+          <div style="font-size: 11px; color: rgba(245,237,216,0.7); margin-top: 4px;">Código fuente, microdatos procesados de la GEIH y documentación del proyecto.</div>
         </div>
       </div>
       
       <div class="plaque-license">
-        <span>Creative Commons BY-SA 4.0 · Colectivo de Investigación</span>
-        <span>Bogotá · Colombia</span>
+        <span>Creative Commons BY-SA 4.0 · William Camilo Artunduaga Viana</span>
+        <span>Cali · Colombia</span>
       </div>
     </div>
   </div>
