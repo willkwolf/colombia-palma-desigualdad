@@ -1189,6 +1189,306 @@
     }
   }
 
+  /* ==========================================================================
+     ECOSYSTEM BACKLINKS & STEPPER STYLES
+     ========================================================================== */
+  :root {
+    --clr-accent: var(--rust);
+    --clr-accent-dim: rgba(176, 53, 27, 0.08);
+    --clr-accent-mid: rgba(176, 53, 27, 0.35);
+    --clr-border: var(--divider);
+    --clr-bg-2: var(--paper);
+    --clr-bg-3: white;
+    --clr-text-bright: var(--brown);
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius-lg: 4px;
+    --radius: 2px;
+  }
+
+  /* 1. Callout Card */
+  .ecosystem-callout-card {
+    margin: 3rem auto 1.5rem;
+    max-width: 850px;
+    display: flex;
+    gap: 1.25rem;
+    background: white;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(107, 58, 31, 0.08);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .ecosystem-callout-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--clr-accent);
+    transition: background var(--transition);
+  }
+
+  .ecosystem-callout-card:hover {
+    border-color: var(--clr-accent-mid);
+    box-shadow: 0 8px 32px rgba(107, 58, 31, 0.15), 0 0 10px var(--clr-accent-dim);
+  }
+
+  .ecosystem-callout-card .callout-badge {
+    font-size: 1.8rem;
+    color: var(--clr-accent);
+    line-height: 1;
+    margin-top: 0.2rem;
+    transition: color var(--transition);
+  }
+
+  .ecosystem-callout-card .callout-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .ecosystem-callout-card .callout-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    transition: color var(--transition);
+  }
+
+  .ecosystem-callout-card .callout-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--clr-text-bright);
+    line-height: 1.3;
+  }
+
+  .ecosystem-callout-card .callout-text {
+    font-size: 15px;
+    color: #2a1e10;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .ecosystem-callout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--clr-accent);
+    text-decoration: none;
+    border: 1px solid var(--clr-accent-mid);
+    background: var(--clr-accent-dim);
+    padding: 0.55rem 1.15rem;
+    border-radius: var(--radius);
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+    cursor: pointer;
+  }
+
+  .ecosystem-callout-btn:hover {
+    background: var(--clr-accent);
+    color: white;
+    border-color: var(--clr-accent);
+  }
+
+  /* 2. Stepper Footer Section */
+  .ecosystem-stepper-section {
+    padding: 1rem 1.5rem 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ecosystem-stepper-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .stepper-subtitle {
+    font-size: 14px;
+    color: rgba(245,237,216,0.6);
+    margin-bottom: 2.2rem;
+  }
+
+  .ecosystem-stepper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    position: relative;
+  }
+
+  /* Connector Line */
+  .ecosystem-stepper::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: rgba(245,237,216,0.15);
+    z-index: 1;
+  }
+
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .step-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 2px solid rgba(245,237,216,0.15);
+    color: rgba(245,237,216,0.6);
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    transition: all var(--transition);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .step-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cream);
+    text-align: center;
+    transition: color var(--transition);
+  }
+
+  .step-project {
+    font-size: 11px;
+    color: rgba(245,237,216,0.5);
+    text-align: center;
+  }
+
+  .step-status {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    transition: opacity var(--transition), transform var(--transition);
+  }
+
+  /* Hover States for Interactive Steps */
+  a.step-item:hover .step-badge {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: #231B10;
+    box-shadow: 0 0 15px rgba(232,168,37,0.15);
+    transform: translateY(-2px);
+  }
+
+  a.step-item:hover .step-title {
+    color: var(--gold);
+  }
+
+  a.step-item:hover .step-status {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+
+  /* Active Step Style */
+  .step-item.active {
+    cursor: default;
+  }
+
+  .step-item.active .step-badge {
+    background: rgba(176, 53, 27, 0.12);
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+    font-weight: 700;
+    box-shadow: 0 0 20px rgba(176, 53, 27, 0.4);
+    transform: scale(1.1);
+    animation: ecosystemActivePulse 2.5s infinite alternate;
+  }
+
+  .step-item.active .step-title {
+    color: var(--clr-accent);
+    font-weight: 700;
+  }
+
+  .step-item.active .step-status {
+    font-weight: 700;
+    color: var(--clr-accent);
+    opacity: 1;
+  }
+
+  .footer-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(245,237,216,0.1);
+    margin: 2.2rem auto;
+    max-width: 1000px;
+  }
+
+  /* Animations */
+  @keyframes ecosystemActivePulse {
+    0% { box-shadow: 0 0 12px rgba(176, 53, 27, 0.15); }
+    100% { box-shadow: 0 0 24px rgba(176, 53, 27, 0.4); }
+  }
+
+  /* Responsive Stepper Styles */
+  @media (max-width: 768px) {
+    .ecosystem-stepper {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 320px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    
+    .ecosystem-stepper::after {
+      display: none;
+    }
+    
+    .step-item {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .step-badge {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+    
+    .step-meta {
+      align-items: flex-start;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1585,36 +1885,103 @@
       <li>🔗 <strong>La informalidad:</strong> casi el 60% de los trabajadores colombianos son informales. Sus ingresos son más volátiles y mal capturados. El Palma real podría ser peor de lo que las encuestas muestran.</li>
     </ul>
   </div>
+
+  <!-- ECOSISTEMA CALLOUT CARD (Link Building Retorno a Paso 3) -->
+  <div class="ecosystem-callout-card">
+    <div class="callout-badge" aria-hidden="true">❖</div>
+    <div class="callout-body">
+      <span class="callout-tag">Ruta del Pensamiento Crítico · Cierre de Ciclo</span>
+      <h4 class="callout-title">De las galletas reales a los marcos de libertad</h4>
+      <p class="callout-text">
+        Cuando el 10% más rico concentra la riqueza de manera desproporcionada frente al 40% más pobre, la estructura misma de la democracia se tensiona. ¿Qué concepto de libertad estamos defendiendo en una sociedad con tal concentración material?
+      </p>
+      <a href="https://willkwolf.github.io/isaiah-berlin-liberty-infographic/" target="_blank" rel="noopener" class="ecosystem-callout-btn">
+        Regresar a reflexionar sobre los límites éticos en la Arquitectura de la Libertad ➔
+      </a>
+    </div>
+  </div>
 </section>
 
 </main><!-- /page -->
 
-<footer>
-  <div class="footer-inner">
-    <div class="museum-plaque-container" tabindex="0" aria-label="Ficha técnica de la infografía analítica como pieza de museo de datos">
-      <div class="plaque-eyebrow">Ficha Técnica · Artefacto Analítico</div>
-      <div class="plaque-title">La Galleta Colombiana: Razón de Palma y Distribución del Ingreso</div>
-      
-      <div class="plaque-grid">
-        <div class="plaque-label">Autor</div>
-        <div class="plaque-value">William Camilo Artunduaga Viana</div>
-
-        <div class="plaque-label">Ubicación</div>
-        <div class="plaque-value">Cali · Colombia</div>
-
-        <div class="plaque-label">Metodología</div>
-        <div class="plaque-value">Razón de Palma post-transferencias (DANE / DNP)</div>
-        
-        <div class="plaque-label">Repositorio</div>
-        <div class="plaque-value">
-          <a href="https://github.com/willkwolf/colombia-palma-desigualdad.git" target="_blank" rel="noopener noreferrer">github.com/willkwolf/colombia-palma-desigualdad</a>
-          <div style="font-size: 11px; color: rgba(245,237,216,0.7); margin-top: 4px;">Código fuente, microdatos procesados de la GEIH y documentación del proyecto.</div>
+<footer class="footer" role="contentinfo">
+  <div class="footer-container">
+    <!-- Stepper del Ecosistema -->
+    <div class="ecosystem-stepper-section">
+      <h3>Ruta del Pensamiento Crítico</h3>
+      <p class="stepper-subtitle">Una red de visualizaciones interactivas para explorar la economía y la sociedad</p>
+      <div class="ecosystem-stepper">
+        <a href="https://willkwolf.github.io/EcoSchoolMap/" class="step-item" target="_blank" rel="noopener">
+          <div class="step-badge">1</div>
+          <div class="step-meta">
+            <span class="step-title">Comprender</span>
+            <span class="step-project">Mapa de Escuelas</span>
+            <span class="step-status">Explorar ➔</span>
+          </div>
+        </a>
+        <a href="https://willkwolf.github.io/economic-bar/" class="step-item" target="_blank" rel="noopener">
+          <div class="step-badge">2</div>
+          <div class="step-meta">
+            <span class="step-title">Mezclar</span>
+            <span class="step-project">El Bar de Cocteles</span>
+            <span class="step-status">Explorar ➔</span>
+          </div>
+        </a>
+        <a href="https://willkwolf.github.io/isaiah-berlin-liberty-infographic/" class="step-item" target="_blank" rel="noopener">
+          <div class="step-badge">3</div>
+          <div class="step-meta">
+            <span class="step-title">Contrastar</span>
+            <span class="step-project">Filosofía de la Libertad</span>
+            <span class="step-status">Explorar ➔</span>
+          </div>
+        </a>
+        <a href="https://willkwolf.github.io/global-inequality-21Century/Escala-visual-de-riqueza-mundial.html" class="step-item" target="_blank" rel="noopener">
+          <div class="step-badge">4</div>
+          <div class="step-meta">
+            <span class="step-title">Escalar</span>
+            <span class="step-project">Brecha de Riqueza Global</span>
+            <span class="step-status">Explorar ➔</span>
+          </div>
+        </a>
+        <div class="step-item active">
+          <div class="step-badge">5</div>
+          <div class="step-meta">
+            <span class="step-title">Aterrizar</span>
+            <span class="step-project">Desigualdad en Colombia</span>
+            <span class="step-status">Estás aquí</span>
+          </div>
         </div>
       </div>
-      
-      <div class="plaque-license">
-        <span>Creative Commons BY-SA 4.0 · William Camilo Artunduaga Viana</span>
-        <span>Cali · Colombia</span>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-inner">
+      <div class="museum-plaque-container" tabindex="0" aria-label="Ficha técnica de la infografía analítica como pieza de museo de datos">
+        <div class="plaque-eyebrow">Ficha Técnica · Artefacto Analítico</div>
+        <div class="plaque-title">La Galleta Colombiana: Razón de Palma y Distribución del Ingreso</div>
+        
+        <div class="plaque-grid">
+          <div class="plaque-label">Autor</div>
+          <div class="plaque-value">William Camilo Artunduaga Viana</div>
+
+          <div class="plaque-label">Ubicación</div>
+          <div class="plaque-value">Cali · Colombia</div>
+
+          <div class="plaque-label">Metodología</div>
+          <div class="plaque-value">Razón de Palma post-transferencias (DANE / DNP)</div>
+          
+          <div class="plaque-label">Repositorio</div>
+          <div class="plaque-value">
+            <a href="https://github.com/willkwolf/colombia-palma-desigualdad.git" target="_blank" rel="noopener noreferrer">github.com/willkwolf/colombia-palma-desigualdad</a>
+            <div style="font-size: 11px; color: rgba(245,237,216,0.7); margin-top: 4px;">Código fuente, microdatos procesados de la GEIH y documentación del proyecto.</div>
+          </div>
+        </div>
+        
+        <div class="plaque-license">
+          <span>Creative Commons BY-SA 4.0 · William Camilo Artunduaga Viana</span>
+          <span>Cali · Colombia</span>
+        </div>
       </div>
     </div>
   </div>
