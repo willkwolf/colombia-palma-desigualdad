@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Galleta Colombiana — Desigualdad de Ingreso</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap');
 
   :root {
     --cream: #F5EDD8;
@@ -152,12 +152,13 @@
   .stat-card.green { border-top-color: var(--forest); }
   .stat-card.dark { background: var(--brown); color: var(--cream); border-top-color: var(--gold); }
   .stat-value {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 48px;
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1;
     color: var(--amber);
     margin-bottom: 6px;
+    letter-spacing: -1px;
   }
   .stat-card.dark .stat-value { color: var(--gold); }
   .stat-card.red .stat-value { color: var(--rust); }
@@ -361,11 +362,12 @@
     margin-bottom: 6px;
   }
   .cg-cookies-number {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 52px;
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1;
     margin: 12px 0 6px;
+    letter-spacing: -1.5px;
   }
   .cg-poor .cg-cookies-number { color: var(--amber); }
   .cg-middle .cg-cookies-number { color: #5a7a5a; }
@@ -419,11 +421,12 @@
     margin-bottom: 10px;
   }
   .cookie-ratio-box .ratio-value {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 60px;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--gold);
     line-height: 1;
+    letter-spacing: -1.5px;
   }
   .cookie-ratio-box .ratio-desc {
     margin-top: 12px;
@@ -1497,13 +1500,13 @@
 <!-- ═══════════════════════════════ MASTHEAD ═══════════════════════════════ -->
 <header class="masthead">
   <div class="masthead-inner">
-    <div class="masthead-eyebrow">Radiografía · Desigualdad de Ingreso · Colombia 2002–2023</div>
+    <div class="masthead-eyebrow">¿Cómo se reparte el dinero en Colombia? · Explicado paso a paso con datos de 2002 a 2023</div>
     <h1 class="fade-up">¿Cómo se reparten<br>las <em>galletas</em><br>en Colombia?</h1>
-    <p class="masthead-sub fade-up delay-1">Un análisis objetivo del Índice de Palma: sus alcances analíticos, las mejoras registradas, los desafíos estructurales pendientes y la concentración de ingresos en el decil superior.</p>
+    <p class="masthead-sub fade-up delay-1">Una guía sencilla para entender el "Índice de Palma": qué mide este indicador, cómo ha cambiado la brecha de dinero en nuestro país y qué retos nos quedan por resolver.</p>
     <div class="masthead-meta fade-up delay-2">
       <span>Fuente principal: DANE · GEIH 2002–2023</span>
       <span>Complemento: BanRep · CEPAL · WID.world</span>
-      <span>Indicador: Razón de Palma post-transferencias</span>
+      <span>Indicador: Índice de Palma post-transferencias</span>
     </div>
   </div>
 </header>
@@ -1512,51 +1515,53 @@
 
 <!-- ═══════════════════════════════ 01. QUÉ ES PALMA ═══════════════════════ -->
 <section id="sec-indicator" aria-labelledby="heading-indicator">
-  <div class="section-label">01 — El indicador</div>
-  <h2 id="heading-indicator">El Índice de Palma: una división que lo dice todo</h2>
+  <div class="section-label">01 — ¿Qué es y cómo se mide?</div>
+  <h2 id="heading-indicator">¿Qué es un índice y cómo mide la desigualdad?</h2>
 
-  <p>El economista Gabriel Palma (Cambridge) descubrió algo incómodo: en casi todos los países del mundo, el 50% del medio de la distribución captura siempre <strong>entre el 45% y el 55%</strong> del ingreso nacional. Es casi una constante. La desigualdad real ocurre en los extremos. Así nació el Índice de Palma (formalizado por Cobham &amp; Sumner, 2013):</p>
+  <p>Imagina que quieres medir qué tan repartido está el dinero en un país. Para eso usamos un <strong>índice</strong>, que funciona igual que un termómetro: en lugar de decir si hace frío o calor, nos indica qué tan grande es la distancia entre las familias que ganan más y las que ganan menos.</p>
+
+  <p>Un economista llamado Gabriel Palma descubrió algo muy curioso: en casi todo el mundo, si juntas a la gente que no es ni muy rica ni muy pobre (la clase media, que es la mitad de la población), a ellos siempre les toca casi la misma tajada de la torta: más o menos la mitad (entre el 45% y el 55%). Entonces, la verdadera diferencia no está en el centro, sino en las dos esquinas: ¡en los que tienen muchísimo y en los que tienen muy poco! Así nació el <strong>Índice de Palma</strong>:</p>
 
   <div class="palma-formula-container">
-    <div class="formula-title">La Razón de Palma como Cociente</div>
+    <div class="formula-title">El Índice de Palma: Una división sencilla</div>
     <div class="formula-equation-wrapper">
       <div class="formula-left">
-        <span>Palma</span>
+        <span>Índice de Palma</span>
         <span class="formula-equals">=</span>
       </div>
       <div class="formula-fraction">
         <div class="formula-numerator">
-          <span class="numerator-text">Ingreso total del 10% más rico</span>
-          <span class="numerator-sub">Decil superior (D10) de la población</span>
+          <span class="numerator-text">Dinero que junta el 10% más rico</span>
+          <span class="numerator-sub">La décima parte de la población con mayores ingresos</span>
         </div>
         <div class="formula-denominator">
-          <span class="denominator-text">Ingreso total del 40% más pobre</span>
-          <span class="denominator-sub">Cuatro deciles inferiores (D1 a D4)</span>
+          <span class="denominator-text">Dinero que junta el 40% más pobre</span>
+          <span class="denominator-sub">Las cuatro décimas partes de la población con menores ingresos</span>
         </div>
       </div>
     </div>
-    <div class="formula-footnote">La clase media (50% restante) se <em>excluye</em> deliberadamente — es el "ruido estable" del sistema.</div>
+    <div class="formula-footnote">A la clase media (el 50% de la población) no la ponemos en la división porque su tajada casi nunca cambia de tamaño.</div>
   </div>
 
-  <p>Un Palma de <strong>1.0</strong> significa igualdad perfecta entre los extremos. Un Palma de <strong>4.0</strong> significa que el 10% más rico concentra el cuádruple del ingreso que el 40% más pobre. Noruega ronda <span class="inline-mono">0.9</span>. Colombia ha oscilado entre <span class="inline-mono">3.7</span> y <span class="inline-mono">5.0</span> en los últimos veinte años.</p>
+  <p>¿Cómo se lee este resultado? Es muy simple: si el resultado de la división es <strong>1.0</strong>, significa que el 10% más rico recibe exactamente la misma cantidad de dinero que todo el 40% más pobre junto. Pero si el resultado es <strong>4.0</strong>, significa que el grupo más rico recibe ¡cuatro veces más! En países muy equitativos como Noruega, el número está cerca de <span class="inline-mono">0.9</span>. En Colombia, este número ha estado entre <span class="inline-mono">3.7</span> y <span class="inline-mono">5.0</span> en los últimos veinte años.</p>
 </section>
 
 <!-- ═══════════════════════════════ 02. LAS GALLETAS ═══════════════════════ -->
 <section id="sec-analogy" aria-labelledby="heading-analogy">
-  <div class="section-label">02 — La analogía</div>
-  <h2 id="heading-analogy">Imagina 100 galletas para repartir entre 10 personas</h2>
+  <div class="section-label">02 — La analogía de las galletas</div>
+  <h2 id="heading-analogy">Imagina repartir 100 galletas entre 10 personas</h2>
 
-  <p>Para hacer el ejercicio concreto, representemos a <strong>Colombia como una reunión de 10 personas</strong>, y el ingreso total del país como <strong>100 galletas de igual tamaño</strong>. Cifras basadas en participaciones de ingreso de la GEIH-DANE para 2022–2023 (promedio post-transferencias).</p>
+  <p>Para entenderlo de forma divertida, imagínate que <strong>toda Colombia es un grupo de 10 personas</strong> y que todo el dinero que gana el país son <strong>100 galletas recién horneadas</strong>. Si repartiéramos las galletas según los datos oficiales de ingresos en Colombia para 2022 y 2023, la mesa quedaría así:</p>
 
   <div class="cookie-scene fade-up delay-1">
-    <div class="cookie-title">🍪 La repartición actual — Colombia ~2022/23</div>
-    <div class="cookie-subtitle">POST-TRANSFERENCIAS SOCIALES · 10 personas representan el universo total de hogares</div>
+    <div class="cookie-title">🍪 Cómo se reparten las galletas en Colombia actualmente</div>
+    <div class="cookie-subtitle">Subsidios y ayudas del gobierno ya incluidos · 10 personas representan a todas las familias del país</div>
 
     <div class="cookie-groups">
 
       <!-- POBRES -->
-      <div class="cookie-group cg-poor" tabindex="0" aria-label="Grupo del 40 por ciento más pobre: 4 personas se reparten 12 galletas en total. Cada persona recibe 3 galletas.">
-        <div class="cg-tag">40% más pobre</div>
+      <div class="cookie-group cg-poor" tabindex="0" aria-label="Grupo del 40 por ciento con menos recursos: 4 personas se reparten 12 galletas en total. A cada una le tocan 3 galletas.">
+        <div class="cg-tag">El 40% con menos recursos</div>
         <div class="cg-people">4 personas</div>
         <div class="cg-cookies-number">12</div>
         <div class="cg-cookies-label">galletas en total</div>
@@ -1564,14 +1569,14 @@
           <!-- Populated by JS -->
         </div>
         <div class="cg-per-person">
-          por persona<br>
+          a cada una le tocan<br>
           <strong>3 galletas</strong>
         </div>
       </div>
 
       <!-- MEDIA -->
-      <div class="cookie-group cg-middle" tabindex="0" aria-label="Grupo de la clase media del 50 por ciento: 5 personas se reparten 43 galletas en total. Cada persona recibe 8.6 galletas.">
-        <div class="cg-tag">Clase media 50%</div>
+      <div class="cookie-group cg-middle" tabindex="0" aria-label="Grupo de la clase media del 50 por ciento: 5 personas se reparten 43 galletas en total. A cada una le tocan 8.6 galletas.">
+        <div class="cg-tag">La clase media (50%)</div>
         <div class="cg-people">5 personas</div>
         <div class="cg-cookies-number">43</div>
         <div class="cg-cookies-label">galletas en total</div>
@@ -1579,14 +1584,14 @@
           <!-- Populated by JS -->
         </div>
         <div class="cg-per-person">
-          por persona<br>
+          a cada una le tocan<br>
           <strong>8.6 galletas</strong>
         </div>
       </div>
 
       <!-- RICOS -->
-      <div class="cookie-group cg-rich" tabindex="0" aria-label="Grupo del 10 por ciento más rico: 1 persona se lleva 45 galletas en total. Esta persona recibe 45 galletas.">
-        <div class="cg-tag">10% más rico</div>
+      <div class="cookie-group cg-rich" tabindex="0" aria-label="Grupo del 10 por ciento con más recursos: 1 sola persona se lleva 45 galletas en total. Esta persona recibe 45 galletas.">
+        <div class="cg-tag">El 10% con más recursos</div>
         <div class="cg-people">1 persona</div>
         <div class="cg-cookies-number">45</div>
         <div class="cg-cookies-label">galletas en total</div>
@@ -1594,83 +1599,84 @@
           <!-- Populated by JS -->
         </div>
         <div class="cg-per-person">
-          por persona<br>
+          a esta persona le tocan<br>
           <strong>45 galletas</strong>
         </div>
       </div>
+
     </div>
 
     <!-- Unified Waffle Chart -->
-    <div class="unified-waffle-wrap" tabindex="0" aria-label="Matriz de 100 galletas que representa la distribución del ingreso nacional: 12 galletas para el 40% más pobre, 43 galletas para el 50% medio, y 45 galletas para el 10% más rico.">
-      <div class="waffle-title">Distribución del ingreso total (100% de la torta nacional)</div>
+    <div class="unified-waffle-wrap" tabindex="0" aria-label="Cuadrícula de 100 galletas que muestra el reparto de la torta nacional: 12 galletas para los 4 con menos recursos, 43 galletas para los 5 de clase media, y 45 galletas para la única persona con más recursos.">
+      <div class="waffle-title">El total de las 100 galletas del país (Toda la torta nacional)</div>
       <div id="waffle-grid" class="waffle-grid" aria-hidden="true"></div>
       <div class="waffle-legend" aria-hidden="true">
-        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell poor"></span> 40% más pobre (12% del ingreso)</div>
-        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell middle"></span> Clase media 50% (43% del ingreso)</div>
-        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell rich"></span> 10% más rico (45% del ingreso)</div>
+        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell poor"></span> Grupo con menos recursos (12 galletas)</div>
+        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell middle"></span> Clase media (43 galletas)</div>
+        <div class="waffle-legend-item"><span class="waffle-dot waffle-cell rich"></span> Grupo con más recursos (45 galletas)</div>
       </div>
     </div>
 
     <div class="cookie-ratio-box">
-      <div class="ratio-label">Razón de Palma resultante (post-transferencias)</div>
+      <div class="ratio-label">Índice de Palma calculado (con ayudas del gobierno)</div>
       <div class="ratio-value">≈ 3.7</div>
-      <div class="ratio-desc">Una persona del decil 10 recibe el mismo ingreso que las 4 personas del fondo del sistema <em>juntas</em>, multiplicado por 3.7. Expresado en galletas: <strong>45 vs. 12</strong>.</div>
+      <div class="ratio-desc">La única persona del grupo con más recursos recibe el equivalente a lo que reciben las 4 personas del grupo con menos recursos <em>juntas</em>, multiplicado por 3.7. En galletas: <strong>45 frente a 12</strong>.</div>
     </div>
   </div>
 
-  <p>Las transferencias sociales (como Renta Ciudadana, Colombia Mayor y otros subsidios del Estado) ya se encuentran incorporadas en las 12 galletas asignadas al 40% más pobre. <strong>Sin estas transferencias, la participación de este grupo descendería a menos de 9 galletas.</strong> Las transferencias sociales mitigan la brecha de ingresos, aunque la estructura distributiva de base permanece altamente concentrada.</p>
+  <p>Un dato muy importante: las ayudas en dinero que el Estado da a las familias vulnerables (como subsidios de Renta Ciudadana o Colombia Mayor) ya están sumadas en las 12 galletas que recibe el grupo con menos recursos. <strong>Si el gobierno no diera estas ayudas, este grupo se quedaría con menos de 9 galletas en total.</strong> Aunque los subsidios ayudan a acortar la distancia, la forma en que se reparte el dinero de base sigue estando muy concentrada en una sola persona.</p>
 
   <!-- ¿Qué es la galleta? -->
   <div class="cookie-note fade-up delay-2">
-    <h3>🔬 ¿De qué está hecha la galleta? (El contenido nutricional)</h3>
-    <p style="font-size:14px; color: var(--muted); margin-bottom: 16px;">El Palma mide <strong>ingreso monetario disponible del hogar</strong> — no riqueza, no patrimonio. Esto importa. La encuesta GEIH del DANE captura lo siguiente:</p>
+    <h3>🔬 ¿De qué ingredientes están hechas nuestras galletas? (¿Qué contamos como ingreso?)</h3>
+    <p style="font-size:14px; color: var(--muted); margin-bottom: 16px;">Para no confundirnos, es clave saber qué significa exactamente "ingreso". El Índice de Palma mide el **dinero mensual que entra a los hogares** para gastar, no las propiedades que tienen las familias. Esto es lo que la encuesta del DANE (la entidad que cuenta estas cosas en Colombia) suma en su bolsa de ingredientes:</p>
     <div class="nutrition-grid">
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
-        <strong>Ingresos laborales</strong>
-        Representan el componente principal: ingresos corrientes por trabajo asalariado e independiente, tanto formal como informal.
+        <strong>El dinero del trabajo</strong>
+        Es el ingrediente principal: los sueldos que ganan las personas en sus empleos cotidianos, ya sean trabajos formales (con contrato) o informales (como ventas en la calle).
       </div>
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
-        <strong>Pensiones y cesantías</strong>
-        Ingreso diferido por jubilación, concentrado principalmente en los percentiles de ingresos medios y altos.
+        <strong>Pensiones de jubilación</strong>
+        El dinero que reciben los abuelos o personas mayores que ya trabajaron toda su vida y ahora descansan. Este dinero suele estar concentrado en familias de ingresos medios y altos.
       </div>
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
-        <strong>Transferencias monetarias</strong>
-        Programas de asistencia social y subsidios públicos, los cuales actúan como un amortiguador crítico de ingresos para los deciles inferiores.
+        <strong>Subsidios del gobierno</strong>
+        Las ayudas en dinero que el Estado entrega directamente a las familias que más lo necesitan para que puedan comprar comida y cosas básicas.
       </div>
       <div class="nutrition-item">
         <span class="ni-tag">✓ Incluido</span>
-        <strong>Arriendos imputados</strong>
-        Si tienes vivienda propia, el DANE imputa un arriendo ficticio como ingreso.
+        <strong>El valor de la casa propia</strong>
+        Si una familia vive en su propia casa y no paga arriendo, el DANE calcula cuánto dinero se están ahorrando y lo suma como si fuera un ingreso extra.
       </div>
       <div class="nutrition-item" style="border: 1px dashed var(--rust); background: #fdf0ee;">
-        <span class="ni-tag" style="color: var(--rust);">✗ No capturado bien</span>
-        <strong>Dividendos y capital financiero</strong>
-        El decil 10 en encuesta de hogares <em>subreporta</em> fuertemente. Los verdaderos millonarios ni aparecen.
+        <span class="ni-tag" style="color: var(--rust);">✗ Difícil de contar</span>
+        <strong>Ganancias de grandes negocios</strong>
+        En las encuestas, las personas muy adineradas que ganan dinero por acciones o inversiones financieras no suelen contar todo lo que reciben. Por eso, los multimillonarios reales casi no aparecen aquí.
       </div>
       <div class="nutrition-item" style="border: 1px dashed var(--rust); background: #fdf0ee;">
-        <span class="ni-tag" style="color: var(--rust);">✗ No incluido</span>
-        <strong>Patrimonio y riqueza neta</strong>
-        Propiedad de tierras, acciones e inmuebles. La concentración de activos es significativamente superior a la del ingreso; este indicador de flujo no refleja la acumulación física o financiera de activos productivos.
+        <span class="ni-tag" style="color: var(--rust);">✗ No se incluye</span>
+        <strong>Riqueza acumulada (Patrimonio)</strong>
+        No mide quién es dueño de grandes fincas, edificios, empresas o terrenos. En Colombia, si midiéramos la dueñez de las cosas en lugar del dinero que entra al mes, ¡la desigualdad sería muchísimo mayor!
       </div>
     </div>
-    <p style="margin-top: 18px; font-size: 13px; color: var(--muted);"><strong>Conclusión:</strong> La galleta es <em>ingreso monetario del hogar, post-transferencias, en el período de referencia.</em> No es riqueza, no es patrimonio. El Palma que ves ya es el <em>mejor</em> escenario porque suaviza la desigualdad real.</p>
+    <p style="margin-top: 18px; font-size: 13px; color: var(--muted);"><strong>Conclusión:</strong> La galleta representa únicamente el <em>dinero en efectivo que las familias reciben mes a mes, incluyendo los subsidios.</em> No muestra las propiedades ni las fortunas guardadas. Por eso, el panorama del Índice de Palma que ves aquí es en realidad la versión más optimista de la desigualdad.</p>
   </div>
 </section>
 
 <!-- ═══════════════════════════════ 03. EVOLUCIÓN ══════════════════════════ -->
 <section id="sec-history" aria-labelledby="heading-history">
-  <div class="section-label">03 — Trayectoria Histórica</div>
-  <h2 id="heading-history">Evolución temporal: tendencias, avances y límites distributivos</h2>
+  <div class="section-label">03 — El viaje en el tiempo</div>
+  <h2 id="heading-history">¿Cómo ha cambiado la desigualdad a lo largo de los años?</h2>
 
-  <p>La serie disponible de Palma post-transferencias para Colombia (DANE-GEIH, metodología MESEP empatada 2002–2023) muestra una trayectoria con tres actos claramente diferenciados.</p>
+  <p>Si miramos los registros del Índice de Palma en Colombia desde el año 2002 hasta el 2023, nos daremos cuenta de que nuestra historia de desigualdad ha tenido tres grandes momentos o etapas diferentes:</p>
 
     <!-- Unified Tufte Line Chart -->
     <div class="tufte-chart-container" id="tufte-chart-block">
-      <div class="tufte-chart-title">Trayectoria de la desigualdad (2002–2023)</div>
-      <div class="tufte-chart-subtitle">RAZÓN DE PALMA POST-TRANSFERENCIAS · SERIE DANE-GEIH EMPALMADA</div>
+      <div class="tufte-chart-title">La evolución del Índice de Palma (2002–2023)</div>
+      <div class="tufte-chart-subtitle">ÍNDICE DE PALMA (CON SUBSIDIOS INCLUIDOS) · DATOS OFICIALES DEL DANE</div>
       
       <div class="chart-svg-wrap">
         <div id="tufte-line-chart" aria-label="Gráfico de línea histórica que muestra el Índice de Palma en Colombia desde 2002 (4.9) hasta 2023 (3.7), mostrando una caída del 24% interrumpida por la pandemia del COVID-19 en 2020.">
@@ -1685,42 +1691,42 @@
   <div class="stat-row fade-up delay-2">
     <div class="stat-card red">
       <div class="stat-value">4.9</div>
-      <div class="stat-label">Palma en 2002 — el punto de partida. El más rico gana casi 5 veces el ingreso del 40% más pobre juntos.</div>
-      <div class="stat-source">DANE-GEIH MESEP empalme</div>
+      <div class="stat-label"><strong>El inicio (Año 2002):</strong> La persona más rica ganaba casi 5 veces lo que ganaban las 4 personas con menos recursos juntas.</div>
+      <div class="stat-source">Serie oficial DANE</div>
     </div>
     <div class="stat-card">
       <div class="stat-value">−24%</div>
-      <div class="stat-label">Reducción acumulada del Palma entre 2002 y 2023. De 4.9 a ~3.7. Progreso real pero insuficiente.</div>
+      <div class="stat-label"><strong>La reducción acumulada:</strong> Entre 2002 y 2023, el Índice de Palma bajó de 4.9 a 3.7. Un avance real, pero aún lento.</div>
       <div class="stat-source">Cálculo sobre serie DANE</div>
     </div>
     <div class="stat-card dark">
       <div class="stat-value">3.7</div>
-      <div class="stat-label">Palma estimado 2023, post-transferencias. Sigue siendo el doble del promedio OCDE (~1.8).</div>
+      <div class="stat-label"><strong>El cierre (Año 2023):</strong> La brecha bajó a 3.7 veces. Aun así, sigue siendo el doble de lo que tienen los países más desarrollados (~1.8).</div>
       <div class="stat-source">DANE 2024 / Gini 0.546</div>
     </div>
     <div class="stat-card red">
       <div class="stat-value">+0.4</div>
-      <div class="stat-label">Rebote del Palma en 2020 por COVID-19. La desigualdad es más frágil de lo que parece.</div>
+      <div class="stat-label"><strong>El golpe de la Pandemia (2020):</strong> Por el COVID-19, el Índice de Palma subió de golpe 0.4 puntos. La desigualdad aumentó al perderse empleos.</div>
       <div class="stat-source">BanRep / DANE</div>
     </div>
   </div>
 
-  <p>El motor del descenso 2002–2019 fue principalmente el <strong>aumento de salarios reales en los dos quintiles inferiores</strong> (+15–17%) y la expansión educativa que redujo la prima salarial por título universitario. <em>No fue una contracción del ingreso del decil 10, sino una expansión de los de abajo.</em> La diferencia importa.</p>
+  <p>¿Por qué bajó la desigualdad entre 2002 y 2019? Principalmente porque <strong>los sueldos de los trabajadores con menores ingresos mejoraron un poco</strong> y porque hubo más acceso a la educación (colegios y universidades). Es decir: <em>la brecha se acortó porque a los de abajo les empezó a ir un poco mejor, no porque los de arriba ganaran menos dinero.</em> Entender esta diferencia es clave para saber cómo seguir mejorando.</p>
 </section>
 
 <!-- ═══════════════════════════════ 04. COMPARADOR ════════════════════════ -->
 <section id="sec-compare" aria-labelledby="heading-compare">
-  <div class="section-label">04 — Contexto internacional</div>
-  <h2 id="heading-compare">Colombia en el mapa global de la desigualdad</h2>
-  <p>¿Es Colombia rara, o simplemente latinoamericana? El Palma nos permite comparar sin trampa.</p>
+  <div class="section-label">04 — En el mapa del mundo</div>
+  <h2 id="heading-compare">¿Cómo está Colombia comparada con otros países?</h2>
+  <p>¿Es la desigualdad en Colombia algo fuera de lo común, o es parecida a la de otros países vecinos de América Latina? El Índice de Palma nos permite hacer una comparación justa y directa:</p>
 
   <table class="compare-table">
     <thead>
       <tr>
         <th>País</th>
-        <th>Palma estimado (reciente)</th>
-        <th>Visualización</th>
-        <th>Nota</th>
+        <th>Índice de Palma reciente</th>
+        <th>Visualización rápida</th>
+        <th>¿Qué significa esta cifra?</th>
       </tr>
     </thead>
     <tbody>
@@ -1728,161 +1734,161 @@
         <td><span class="flag-emoji">🇳🇴</span>Noruega</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: var(--forest);">0.9</td>
         <td><div class="palma-bar-inline" style="width:18px; background: var(--forest);"></div></td>
-        <td style="font-size:12px; color: var(--muted);">Referencia de alta igualdad</td>
+        <td style="font-size:12px; color: var(--muted);">Ejemplo de gran igualdad: los de arriba y los de abajo ganan casi igual.</td>
       </tr>
       <tr>
         <td><span class="flag-emoji">🇩🇪</span>Alemania</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: var(--forest);">1.1</td>
         <td><div class="palma-bar-inline" style="width:22px; background: var(--forest);"></div></td>
-        <td style="font-size:12px; color: var(--muted);">Promedio OCDE zona</td>
+        <td style="font-size:12px; color: var(--muted);">Promedio de la zona europea de países desarrollados.</td>
       </tr>
       <tr>
         <td><span class="flag-emoji">🇺🇸</span>Estados Unidos</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: var(--amber);">2.0</td>
         <td><div class="palma-bar-inline" style="width:40px; background: var(--amber);"></div></td>
-        <td style="font-size:12px; color: var(--muted);">Alto para país rico</td>
+        <td style="font-size:12px; color: var(--muted);">Desigualdad alta para ser un país tan rico.</td>
       </tr>
       <tr>
         <td><span class="flag-emoji">🇺🇾</span>Uruguay</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: var(--amber);">2.4</td>
         <td><div class="palma-bar-inline" style="width:48px; background: var(--amber);"></div></td>
-        <td style="font-size:12px; color: var(--muted);">El más igualitario de A.L.</td>
+        <td style="font-size:12px; color: var(--muted);">El país más igualitario de América Latina.</td>
       </tr>
       <tr>
         <td><span class="flag-emoji">🇵🇪</span>Perú</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: var(--amber);">2.9</td>
         <td><div class="palma-bar-inline" style="width:58px; background: var(--amber);"></div></td>
-        <td style="font-size:12px; color: var(--muted);">Mejoró notablemente</td>
+        <td style="font-size:12px; color: var(--muted);">Ha logrado avances importantes en los últimos años.</td>
       </tr>
       <tr>
         <td><span class="flag-emoji">🇲🇽</span>México</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: #c47050;">3.2</td>
         <td><div class="palma-bar-inline" style="width:64px; background: #c47050;"></div></td>
-        <td style="font-size:12px; color: var(--muted);">Alta desigualdad persistente</td>
+        <td style="font-size:12px; color: var(--muted);">Desigualdad alta que se mantiene firme en el tiempo.</td>
       </tr>
       <tr class="highlight">
         <td><span class="flag-emoji">🇨🇴</span><strong>Colombia</strong></td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 700; color: var(--rust);">3.7</td>
         <td><div class="palma-bar-inline" style="width:74px; background: var(--rust);"></div></td>
-        <td style="font-size:12px; color: var(--rust); font-weight: 500;">2° más desigual A.L. post-Brasil</td>
+        <td style="font-size:12px; color: var(--rust); font-weight: 500;">Segundo país más desigual de América Latina, solo superado por Brasil.</td>
       </tr>
       <tr>
         <td><span class="flag-emoji">🇧🇷</span>Brasil</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: var(--rust);">4.0</td>
         <td><div class="palma-bar-inline" style="width:80px; background: var(--rust);"></div></td>
-        <td style="font-size:12px; color: var(--muted);">Referencia de A.L. extrema</td>
+        <td style="font-size:12px; color: var(--muted);">Referencia histórica de desigualdad muy extrema en la región.</td>
       </tr>
       <tr>
         <td><span class="flag-emoji">🇿🇦</span>Sudáfrica</td>
         <td style="font-family: 'DM Mono', monospace; font-weight: 600; color: var(--rust);">7.0+</td>
         <td><div class="palma-bar-inline" style="width:140px; background: var(--rust);"></div></td>
-        <td style="font-size:12px; color: var(--muted);">El más desigual del planeta</td>
+        <td style="font-size:12px; color: var(--muted);">El lugar con mayor desigualdad del planeta entero.</td>
       </tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <div class="callout-text">La reducción del Índice de Palma en Colombia durante las últimas dos décadas refleja un avance distributivo notable en el contexto regional; no obstante, la brecha respecto a economías más equitativas de América Latina y la OCDE se mantiene sustancial.</div>
-    <div class="callout-source">— Síntesis editorial basada en CEPAL 2022, BanRep ESPE 2022, DANE 2024</div>
+    <div class="callout-text">Que el Índice de Palma haya bajado en Colombia es una buena noticia y demuestra que hemos progresado frente a nuestros vecinos de la región; sin embargo, la distancia que nos separa de sociedades más justas e igualitarias sigue siendo muy grande.</div>
+    <div class="callout-source">— Resumen analítico basado en informes de CEPAL 2022, Banco de la República 2022 y DANE 2024</div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════ 05. QUÉ SÍ / QUÉ NO ══════════════════ -->
 <section id="sec-limits" aria-labelledby="heading-limits">
-  <div class="section-label">05 — Límites del indicador</div>
-  <h2 id="heading-limits">Lo que el Palma ve — y lo que tiene puntos ciegos</h2>
-  <p>Para no estirar el indicador más allá de sus costuras, aquí está el mapa honesto de sus capacidades.</p>
+  <div class="section-label">05 — ¿Cuáles son sus límites?</div>
+  <h2 id="heading-limits">Lo que el Índice de Palma ve — y lo que tiene puntos ciegos</h2>
+  <p>Ningún indicador de medición es mágico. Para interpretar el Índice de Palma correctamente y sin cometer errores, debemos entender qué nos puede decir y qué cosas se le escapan de las manos:</p>
 
   <div class="two-col">
     <div class="col-box is">
-      <h3>✅ Sí dice el Palma</h3>
+      <h3>✅ Lo que SÍ nos muestra el Índice de Palma</h3>
       <ul class="col-list">
-        <li>La brecha de <em>ingreso corriente</em> entre los extremos de la distribución en un año dado.</li>
-        <li>Si esa brecha aumentó o disminuyó en el tiempo, año a año.</li>
-        <li>Cuánto "trabaja" la redistribución estatal: compara Palma pre vs. post-transferencias.</li>
-        <li>Si el crecimiento fue incluyente o excluyente (¿quién ganó más?).</li>
-        <li>Permite comparaciones internacionales directas y comprensibles para no expertos.</li>
+        <li>La diferencia de <strong>dinero mensual</strong> entre el grupo con más recursos y el de menos recursos cada año.</li>
+        <li>Si la distancia entre estos dos grupos se está agrandando o acortando con el paso del tiempo.</li>
+        <li>Qué tanto ayudan los subsidios del gobierno para acortar esa brecha (comparando el Índice de Palma antes y después de estas ayudas).</li>
+        <li>Si la economía del país crece de forma que beneficie a todos o solo a unos pocos.</li>
+        <li>Nos da un número sencillo para poder comparar a Colombia con otros países de forma fácil.</li>
       </ul>
     </div>
     <div class="col-box not">
-      <h3>❌ No dice el Palma</h3>
+      <h3>❌ Lo que NO nos muestra el Índice de Palma</h3>
       <ul class="col-list">
-        <li>Nada sobre <strong>riqueza patrimonial</strong> (tierras, acciones, inmuebles). La desigualdad real es bastante mayor.</li>
-        <li>Nada sobre desigualdad <em>dentro</em> del decil 10. El 1% más rico es un mundo aparte.</li>
-        <li>Nada sobre movilidad social: ¿los mismos hogares están siempre abajo, o rotan?</li>
-        <li>Nada sobre desigualdad de género, étnica o regional. El Palma nacional es un promedio que enmascara brutales diferencias Chocó vs. Bogotá.</li>
-        <li>No captura la <em>informalidad laboral</em> ni ingresos en especie rurales con precisión.</li>
-        <li>No mide bienestar subjetivo, acceso a servicios o calidad de vida más allá del ingreso.</li>
+        <li>Nada sobre la <strong>riqueza real acumulada</strong> (las fincas, casas de lujo, terrenos o empresas de la gente).</li>
+        <li>La diferencia enorme que hay <em>dentro</em> del grupo más rico. La distancia entre un profesional bien pagado y un multimillonario dueño de bancos es gigantesca, pero el índice los junta a todos en el mismo decil.</li>
+        <li>Si las familias logran salir de abajo con los años o si las mismas personas se quedan siempre en el mismo grupo.</li>
+        <li>Las diferencias de género, raza o de regiones (el Índice de Palma nacional es un promedio; no muestra que en departamentos como el Chocó la desigualdad es mucho más grave que en Bogotá).</li>
+        <li>El dinero que la gente gana en trabajos informales o trueques en el campo, que son muy difíciles de registrar en encuestas.</li>
+        <li>Cómo se sienten las personas con sus vidas, su acceso a una buena salud o educación de calidad.</li>
       </ul>
     </div>
   </div>
 
   <div class="warning-box">
-    <h3>⚠ Consideraciones clave para evitar sesgos analíticos al interpretar el Palma</h3>
+    <h3>⚠ Ideas equivocadas que debemos evitar para no confundirnos al interpretar el Índice de Palma</h3>
     <ul class="warning-list">
-      <li><strong>"El Palma bajó, por lo tanto la desigualdad desapareció."</strong> Falso. Un Palma de 3.7 sigue siendo una brecha abismal en términos de calidad de vida y oportunidades.</li>
-      <li><strong>"El decil 10 son los millonarios."</strong> No exactamente. Las encuestas de hogares <em>subreportan</em> los ingresos del 0.1% más rico. El decil 10 en GEIH incluye muchos profesionales con buen salario, pero los verdaderos superricos están estadísticamente invisibles.</li>
-      <li><strong>"El Palma mide la pobreza."</strong> No. Mide la distancia relativa entre extremos. Un país puede reducir pobreza sin mejorar el Palma si el decil 10 también crece.</li>
-      <li><strong>"Como el 50% medio no cambia, no importa."</strong> Sí importa para otras políticas. El Palma simplemente lo excluye por convención analítica, no porque sea irrelevante.</li>
-      <li><strong>"Colombia es más desigual que Sudáfrica."</strong> Falso. Sudáfrica tiene Palma 7+, Colombia ~3.7. El Palma exige leer el número, no solo el adjetivo.</li>
+      <li><strong>"Como el Índice de Palma bajó, la desigualdad ya no es un problema."</strong> ¡Falso! Un Índice de Palma de 3.7 sigue significando una distancia enorme en la calidad de vida y en las oportunidades que tienen los jóvenes.</li>
+      <li><strong>"El 10% más rico son solo los multimillonarios."</strong> No exactamente. En este grupo entra cualquier profesional con un sueldo alto (como médicos experimentados o ingenieros exitosos). Los multimillonarios de verdad son muy pocos y casi nunca aparecen en las encuestas que se hacen puerta a puerta.</li>
+      <li><strong>"El Índice de Palma mide la pobreza del país."</strong> No. Lo que mide es la distancia entre los extremos. Un país podría reducir la pobreza (haciendo que todos ganen un poquito más) sin que el Índice de Palma mejore, si los de arriba también crecen al mismo ritmo.</li>
+      <li><strong>"Como excluimos a la clase media, quiere decir que ellos no importan."</strong> Sí importan y mucho. Simplemente, como su tajada casi nunca cambia de tamaño, el Índice de Palma los hace a un lado para enfocarse en donde se da la pelea más fuerte por los recursos.</li>
+      <li><strong>"Colombia es el país más desigual de la Tierra."</strong> Falso. Sudáfrica tiene un Índice de Palma superior a 7, mientras que Colombia está en 3.7. Hay que fijarse bien en los números y no solo en las alarmas.</li>
     </ul>
   </div>
 </section>
 
 <!-- ═══════════════════════════════ 06. ESTADO DEL ARTE ══════════════════ -->
 <section id="sec-current" aria-labelledby="heading-current">
-  <div class="section-label">06 — Estado del arte 2023–2024</div>
-  <h2 id="heading-current">La radiografía actual: qué mejoró, qué no</h2>
+  <div class="section-label">06 — ¿Cómo estamos hoy?</div>
+  <h2 id="heading-current">La foto del momento: ¿qué cosas mejoraron y cuáles siguen igual?</h2>
 
   <div class="stat-row fade-up delay-1">
     <div class="stat-card green">
       <div class="stat-value">33%</div>
-      <div class="stat-label">Pobreza monetaria nacional 2023 — una reducción de más de 3 p.p. respecto a 2022 (36.6%). El mayor descenso en años recientes.</div>
-      <div class="stat-source">DANE · Pobreza monetaria 2023</div>
+      <div class="stat-label"><strong>Pobreza monetaria (2023):</strong> Significa que de cada 100 colombianos, 33 no tienen dinero suficiente para cubrir sus necesidades básicas. Bajó frente al año anterior, que era 36.6%.</div>
+      <div class="stat-source">Cifras de pobreza del DANE</div>
     </div>
     <div class="stat-card green">
       <div class="stat-value">0.546</div>
-      <div class="stat-label">Gini 2023 nacional — descenso desde 0.556 en 2022. Consistente con mejora del Palma al 3.7.</div>
-      <div class="stat-source">DANE-GEIH 2023</div>
+      <div class="stat-label"><strong>El Coeficiente de Gini (2023):</strong> Otra regla que mide la desigualdad de 0 a 1 (donde 0 es igualdad total). Bajó de 0.556 a 0.546, lo que coincide con la mejora de nuestro Índice de Palma a 3.7.</div>
+      <div class="stat-source">Encuesta de Hogares DANE</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value">4.4 p.p.</div>
-      <div class="stat-label">Reducción de pobreza atribuible a transferencias institucionales (sin ellas, la pobreza sería 4.4 puntos mayor en 2023).</div>
-      <div class="stat-source">DNP / DANE 2024</div>
+      <div class="stat-value">4.4%</div>
+      <div class="stat-label"><strong>El poder de los subsidios:</strong> Gracias a las ayudas en dinero entregadas por el gobierno, se evitó que la pobreza aumentara 4.4 puntos más en el año 2023.</div>
+      <div class="stat-source">Cálculo del DNP y DANE</div>
     </div>
     <div class="stat-card red">
       <div class="stat-value">60.1%</div>
-      <div class="stat-label">Pobreza monetaria en Quibdó — la ciudad más pobre registrada en 2023. El Palma nacional oculta estas brechas.</div>
-      <div class="stat-source">DANE 2024</div>
+      <div class="stat-label"><strong>El caso de Quibdó:</strong> Es la ciudad capital con mayor pobreza monetaria en 2023. Esta dura realidad local queda oculta detrás del promedio de todo el país.</div>
+      <div class="stat-source">Datos del DANE 2024</div>
     </div>
   </div>
 
-  <p>El motor del descenso 2022–2023 fue el mercado laboral: los ingresos laborales del 40% más pobre crecieron más rápido que los del decil superior. Las transferencias sociales contribuyeron especialmente en zonas rurales (redujeron pobreza extrema rural en 9.4 p.p.). Esto es exactamente lo que el Palma post-transferencias está diseñado para detectar.</p>
+  <p>¿Qué ayudó a que las cosas mejoraran un poco entre 2022 y 2023? Principalmente el empleo: las personas con menores ingresos consiguieron mejores oportunidades de trabajo y sus ganancias crecieron a un ritmo más rápido que las del grupo con mayores ingresos. Además, los subsidios estatales ayudaron mucho en el campo, logrando reducir la pobreza extrema rural en casi 10 puntos. Esto es precisamente lo que nuestro Índice de Palma post-transferencias nos permite captar.</p>
 
-  <p>Sin embargo, <strong>el Gini de Colombia en 2023 (0.546) sigue siendo mayor que el promedio latinoamericano de 2019 (0.460)</strong>, y más del doble del promedio OCDE (0.316). La mejora es real. El destino sigue lejos.</p>
+  <p>A pesar de estas mejoras, <strong>la desigualdad en Colombia (medida con un Gini de 0.546) sigue siendo superior al promedio de toda América Latina (0.460)</strong>, y es más del doble de la que registran los países de la OCDE (0.316), el grupo de los países más desarrollados. Hemos avanzado un paso en el camino, pero la meta de un país justo aún está muy lejos.</p>
 </section>
 
 <!-- ═══════════════════════════════ 07. RESUMEN GALLETAS ══════════════════ -->
 <section id="sec-closing" aria-labelledby="heading-closing">
-  <div class="section-label">07 — Cierre</div>
-  <h2 id="heading-closing">La escena final de las galletas</h2>
+  <div class="section-label">07 — Para reflexionar</div>
+  <h2 id="heading-closing">La mesa al final del día</h2>
 
-  <p>Si en 2002 la repartición era así: <strong>1 persona lleva 49 galletas, y las otras 4 del fondo se reparten 10</strong> — un Palma de casi 5 — y hoy esa persona lleva <strong>45</strong> y las otras 4 del fondo tienen <strong>12</strong>... ¿es un progreso? <strong>Técnicamente, sí.</strong></p>
+  <p>Pensemos de nuevo en las galletas. En el año 2002, la mesa estaba así: <strong>1 persona se quedaba con 49 galletas y las otras 4 personas del fondo tenían que repartirse apenas 10 galletas</strong> (eso daba una distancia de casi 5 veces). Hoy en día, la persona de arriba se queda con <strong>45 galletas</strong> y las 4 personas del fondo se reparten <strong>12 galletas</strong> (una distancia de 3.7 veces). ¿Es esto una mejora? <strong>Si miramos los números fríamente, la respuesta es sí: la distancia se acortó un poco.</strong></p>
 
-  <p>¿Constituyen estas variaciones una mejora distributiva? Los datos reflejan una disminución gradual de la disparidad extrema de ingresos; sin embargo, dado que la porción agregada del 40% con menores recursos equivale a una fracción del ingreso del decil superior, la concentración distributiva en Colombia continúa en niveles históricamente elevados.</p>
+  <p>¿Pero es suficiente este avance para decir que somos un país equitativo? Aunque la distancia extrema entre los dos lados de la mesa se ha reducido poco a poco, lo cierto es que la bolsa de dinero de las 4 personas con menos recursos juntas sigue siendo una tajada muy pequeña comparada con lo que se lleva una sola persona del grupo más rico. La concentración de ingresos en Colombia continúa estando entre las más altas del mundo.</p>
 
   <div class="callout">
-    <div class="callout-text">La clase media colombiana (el 50% del medio) recibe ~43 galletas, estable como reloj. Los únicos que realmente disputan las galletas son los de arriba y los de abajo. Y de ese juego, el Palma es el árbitro más honesto que tenemos.</div>
-    <div class="callout-source">— La "observación de Palma" en Gabriel Palma (2011), Cambridge</div>
+    <div class="callout-text">Las 5 personas del medio (la clase media) siempre reciben alrededor de 43 galletas, pase lo que pase, como si fuera una regla grabada en piedra. Por eso, la verdadera lucha por repartirse la comida en la mesa se da entre los de arriba y los de abajo, y para entender esa lucha, el Índice de Palma es la mejor herramienta que tenemos.</div>
+    <div class="callout-source">— Idea original del economista Gabriel Palma (2011), Universidad de Cambridge</div>
   </div>
 
   <div style="margin-top: 40px; padding: 32px; background: var(--paper); border-radius: 3px; border-left: 4px solid var(--amber);">
-    <h3 style="margin-bottom: 16px;">Para seguir leyendo sin estirar este indicador</h3>
+    <h3 style="margin-bottom: 16px;">Para seguir investigando sin perder el rumbo</h3>
     <ul style="font-size: 14px; list-style: none; display: grid; gap: 10px;">
-      <li>🔗 <strong>Desigualdad patrimonial:</strong> busca datos de WID.world sobre concentración de riqueza en Colombia — es 3–4 veces más desigual que el ingreso.</li>
-      <li>🔗 <strong>Desigualdad regional:</strong> compara el Gini de Chocó vs. Cundinamarca. El promedio nacional enmascara un país dentro del país.</li>
-      <li>🔗 <strong>Movilidad social:</strong> el Palma no dice si los mismos apellidos siguen abajo o arriba. Para eso busca estudios de elasticidad intergeneracional de ingresos en Colombia (BanRep tiene buenos papers).</li>
-      <li>🔗 <strong>La informalidad:</strong> casi el 60% de los trabajadores colombianos son informales. Sus ingresos son más volátiles y mal capturados. El Palma real podría ser peor de lo que las encuestas muestran.</li>
+      <li>🔗 <strong>Desigualdad en propiedades y riquezas:</strong> busca en WID.world cómo se reparte la tierra, las casas y las cuentas bancarias en Colombia. Verás que esa distribución es de 3 a 4 veces más desigual que los ingresos mensuales.</li>
+      <li>🔗 <strong>Desigualdad en las regiones:</strong> compara los niveles de ingresos entre departamentos como Chocó y Cundinamarca. El promedio del país esconde realidades muy diferentes en cada territorio.</li>
+      <li>🔗 <strong>Movilidad social (la escalera del éxito):</strong> el Índice de Palma no nos dice si los hijos de familias con bajos ingresos logran cambiar su situación económica al crecer o si siempre se quedan en el mismo grupo. Busca estudios sobre la "elasticidad de ingresos intergeneracional" en el Banco de la República.</li>
+      <li>🔗 <strong>El trabajo informal:</strong> casi 6 de cada 10 trabajadores colombianos no tienen un empleo formal. Sus ingresos cambian constantemente y son difíciles de registrar en las encuestas, por lo que la desigualdad real podría ser mayor a la reportada.</li>
     </ul>
   </div>
 
@@ -1890,13 +1896,13 @@
   <div class="ecosystem-callout-card">
     <div class="callout-badge" aria-hidden="true">❖</div>
     <div class="callout-body">
-      <span class="callout-tag">Ruta del Pensamiento Crítico · Cierre de Ciclo</span>
-      <h4 class="callout-title">De las galletas reales a los marcos de libertad</h4>
+      <span class="callout-tag">Ruta del Pensamiento Crítico · Cierre del camino</span>
+      <h4 class="callout-title">De las galletas de hoy a la libertad de mañana</h4>
       <p class="callout-text">
-        Cuando el 10% más rico concentra la riqueza de manera desproporcionada frente al 40% más pobre, la estructura misma de la democracia se tensiona. ¿Qué concepto de libertad estamos defendiendo en una sociedad con tal concentración material?
+        Cuando una sola persona en la mesa se queda con casi la mitad de las galletas y a las cuatro personas del fondo apenas les toca una pequeña parte, la convivencia y la democracia empiezan a fallar. ¿Podemos hablar de una libertad verdadera para todos si las condiciones materiales de vida están tan desbalanceadas?
       </p>
       <a href="https://willkwolf.github.io/isaiah-berlin-liberty-infographic/" target="_blank" rel="noopener" class="ecosystem-callout-btn">
-        Regresar a reflexionar sobre los límites éticos en la Arquitectura de la Libertad ➔
+        Regresa a pensar sobre los límites y las reglas éticas de la Libertad ➔
       </a>
     </div>
   </div>
@@ -1967,7 +1973,7 @@
     <div class="footer-inner">
       <div class="museum-plaque-container" tabindex="0" aria-label="Ficha técnica de la infografía analítica como pieza de museo de datos">
         <div class="plaque-eyebrow">Ficha Técnica · Artefacto Analítico</div>
-        <div class="plaque-title">La Galleta Colombiana: Razón de Palma y Distribución del Ingreso</div>
+        <div class="plaque-title">La Galleta Colombiana: Índice de Palma y Distribución del Ingreso</div>
         
         <div class="plaque-grid">
           <div class="plaque-label">Autor</div>
@@ -1977,7 +1983,7 @@
           <div class="plaque-value">Cali · Colombia</div>
 
           <div class="plaque-label">Metodología</div>
-          <div class="plaque-value">Razón de Palma post-transferencias (DANE / DNP)</div>
+          <div class="plaque-value">Índice de Palma post-transferencias (DANE / DNP)</div>
           
           <div class="plaque-label">Repositorio</div>
           <div class="plaque-value">
@@ -1998,20 +2004,20 @@
 <script>
   // 1. DATA DEFINITIONS
   const HISTORICAL_DATA = [
-    { year: 2002, value: 4.9, phase: 'crisis', note: 'Punto de partida (crisis alta)' },
-    { year: 2004, value: 4.7, phase: 'crisis', note: 'Descenso lento inicial' },
-    { year: 2006, value: 4.5, phase: 'crisis', note: 'Estabilización' },
-    { year: 2008, value: 4.4, phase: 'mejora', note: 'Inicio de mejora progresiva' },
-    { year: 2010, value: 4.6, phase: 'crisis', note: 'Breve retroceso/rebote' },
-    { year: 2012, value: 4.1, phase: 'mejora', note: 'Expansión de salarios inferiores' },
-    { year: 2014, value: 3.9, phase: 'mejora', note: 'Consolidación de mejoras' },
-    { year: 2016, value: 3.8, phase: 'mejora', note: 'Mínimo del ciclo de materias primas' },
-    { year: 2018, value: 3.9, phase: 'mejora', note: 'Estancamiento pre-pandemia' },
-    { year: 2019, value: 3.7, phase: 'mejora', note: 'Mínimo histórico pre-COVID' },
-    { year: 2020, value: 4.1, phase: 'regresion', note: 'Severa regresión por Pandemia COVID-19' },
-    { year: 2021, value: 3.9, phase: 'recuperacion', note: 'Recuperación económica gradual' },
-    { year: 2022, value: 3.8, phase: 'recuperacion', note: 'Recuperación del mercado de empleo' },
-    { year: 2023, value: 3.7, phase: 'recuperacion', note: 'Retorno al mínimo histórico post-COVID' }
+    { year: 2002, value: 4.9, phase: 'crisis', note: 'Punto de partida con una brecha muy alta' },
+    { year: 2004, value: 4.7, phase: 'crisis', note: 'La brecha empieza a bajar lentamente' },
+    { year: 2006, value: 4.5, phase: 'crisis', note: 'Se mantiene estable sin cambios notables' },
+    { year: 2008, value: 4.4, phase: 'mejora', note: 'El dinero empieza a repartirse un poquito mejor' },
+    { year: 2010, value: 4.6, phase: 'crisis', note: 'Un pequeño retroceso donde vuelve a subir la brecha' },
+    { year: 2012, value: 4.1, phase: 'mejora', note: 'Los sueldos de las personas con menos recursos mejoran' },
+    { year: 2014, value: 3.9, phase: 'mejora', note: 'Se consolidan las pequeñas mejoras distributivas' },
+    { year: 2016, value: 3.8, phase: 'mejora', note: 'El punto de desigualdad más bajo del ciclo económico' },
+    { year: 2018, value: 3.9, phase: 'mejora', note: 'La desigualdad se estanca antes de la pandemia' },
+    { year: 2019, value: 3.7, phase: 'mejora', note: 'El punto más bajo de desigualdad antes del COVID' },
+    { year: 2020, value: 4.1, phase: 'regresion', note: 'Fuerte aumento de desigualdad por la Pandemia' },
+    { year: 2021, value: 3.9, phase: 'recuperacion', note: 'La economía y el empleo empiezan a recuperarse' },
+    { year: 2022, value: 3.8, phase: 'recuperacion', note: 'Se recuperan más puestos de trabajo en el país' },
+    { year: 2023, value: 3.7, phase: 'recuperacion', note: 'Volvemos al punto de menor desigualdad registrado' }
   ];
 
   const PALMA_DISTRIBUTION = {
@@ -2171,7 +2177,7 @@
           style="cursor:pointer; pointer-events:all;"
           tabindex="0"
           role="button"
-          aria-label="Año ${d.year}: Razón de Palma de ${d.value}. ${d.note}"
+          aria-label="Año ${d.year}: Índice de Palma de ${d.value}. ${d.note}"
           data-year="${d.year}"
           data-value="${d.value}"
           data-note="${d.note}"
@@ -2240,16 +2246,16 @@
           visualPt.style.strokeWidth = '2.5px';
         }
 
-        // Color tag mapping
+        // Mapeo de fases a textos sencillos
         let phaseText = '';
-        if (phase === 'crisis') phaseText = 'Concentración extrema (> 4.5)';
-        else if (phase === 'mejora') phaseText = 'Fase de reducción progresiva (3.7–4.4)';
-        else if (phase === 'regresion') phaseText = 'Regresión por impacto COVID-19';
-        else if (phase === 'recuperacion') phaseText = 'Periodo de recuperación distributiva';
+        if (phase === 'crisis') phaseText = 'Desigualdad muy alta (más de 4.5 veces)';
+        else if (phase === 'mejora') phaseText = 'Fase de reducción de la brecha (3.7 a 4.4)';
+        else if (phase === 'regresion') phaseText = 'Retroceso por la pandemia de COVID-19';
+        else if (phase === 'recuperacion') phaseText = 'Periodo de recuperación del empleo';
 
         tooltip.innerHTML = `
           <strong>Año ${year}</strong>
-          <div>Razón de Palma: <strong>${val}</strong></div>
+          <div>Índice de Palma: <strong>${val}</strong></div>
           <div style="font-size:10px; margin-top:4px; opacity:0.85; font-weight:500;">${phaseText}</div>
           <div style="font-size:10px; margin-top:2px; font-style:italic; opacity:0.75; line-height:1.2;">${note}</div>
         `;
