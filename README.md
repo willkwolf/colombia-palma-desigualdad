@@ -65,9 +65,10 @@ El proyecto rechaza los frameworks modernos para garantizar **inmunidad absoluta
 
 ## 🛠️ Stack Tecnológico
 
-* **HTML5 Semántico & CSS3 Premium:** Estilo de diseño de museo antiguo e infografía clásica de Tufte con fuentes premium de Google Fonts.
-* **Vanilla Javascript:** Lógica reactiva para recalcular dinámicamente el Waffle Chart de galletas y trazar el gráfico de rango-eje SVG.
-* **GitHub Actions Pipeline:** Workflow automático que valida en cada push la semántica HTML5, realiza auditorías de accesibilidad WCAG 2.1 AA en consola mediante `@axe-core/cli` y realiza el despliegue automático a producción.
+* **HTML5 Semántico & CSS3 Premium:** Estilo de diseño de museo antiguo e infografía clásica de Tufte con fuentes premium de Google Fonts y escala tipográfica fluida adaptada a desktop y mobile.
+* **Vanilla Javascript & i18n Reactivo:** Lógica reactiva sin dependencias para internacionalización bilingüe completa (ES/EN), renderizado reactivo del Waffle Chart y trazado de gráfico Tufte Range-Frame SVG con microdatos interactivos.
+* **Accesibilidad Total (WCAG 2.1 AA):** Ratios de contraste verificados, navegación completa por teclado, objetivos táctiles generosos (touch targets de 44px+) y lectores de pantalla compatibles (ARIA / sr-only).
+* **GitHub Actions Pipeline:** Workflow automático que valida en cada push la semántica HTML5 y realiza el despliegue automático a producción.
 
 ---
 
