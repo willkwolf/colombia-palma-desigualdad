@@ -512,6 +512,7 @@
     padding: 24px 20px;
     margin-bottom: 24px;
     text-align: center;
+    position: relative;
   }
   .waffle-title {
     font-family: 'DM Mono', monospace;
@@ -529,18 +530,55 @@
     gap: 4px;
     justify-content: center;
     margin: 0 auto 16px;
+    position: relative;
   }
   .waffle-cell {
     border-radius: 2px;
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    cursor: pointer;
+    outline: none;
   }
-  .waffle-cell:hover {
-    transform: scale(1.25);
-    z-index: 5;
+  .waffle-cell:hover, .waffle-cell:focus-visible {
+    transform: scale(1.3);
+    box-shadow: 0 3px 8px rgba(92, 50, 25, 0.35);
+    z-index: 10;
   }
   .waffle-cell.poor { background: var(--amber); }
   .waffle-cell.middle { background: var(--forest); }
   .waffle-cell.rich { background: var(--rust); }
+
+  /* Globo interactivo flotante en Waffle Chart */
+  .waffle-tooltip {
+    position: absolute;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'DM Mono', monospace;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.1s ease;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--gold-light);
+    white-space: nowrap;
+    line-height: 1.35;
+    transform: translate(-50%, -100%);
+  }
+  .waffle-tooltip.visible {
+    opacity: 1;
+  }
+  .waffle-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0;
+    border-style: solid;
+    border-color: var(--ink) transparent transparent;
+  }
 
   .waffle-legend {
     display: flex;
@@ -1337,6 +1375,7 @@
       <div class="unified-waffle-wrap" tabindex="0" role="img" aria-label="Gráfico de cuadrícula con 100 galletas: 12 corresponden al 40% vulnerable, 43 a la clase media y 45 al 10% superior.">
         <div class="waffle-title" data-i18n="waffle_title">Composición de las 100 galletas de la torta nacional</div>
         <div id="waffle-grid" class="waffle-grid" aria-hidden="true"></div>
+        <div id="waffle-tooltip" class="waffle-tooltip" role="status" aria-live="polite"></div>
         <div class="waffle-legend" aria-hidden="true">
           <div class="waffle-legend-item"><span class="waffle-dot waffle-cell poor"></span> <span data-i18n="waffle_leg_poor">40% Vulnerable (12 galletas)</span></div>
           <div class="waffle-legend-item"><span class="waffle-dot waffle-cell middle"></span> <span data-i18n="waffle_leg_middle">50% Clase Media (43 galletas)</span></div>
@@ -1991,6 +2030,8 @@
 
   function renderWaffleGrid() {
     const grid = document.getElementById('waffle-grid');
+    const tooltip = document.getElementById('waffle-tooltip');
+    const wrap = grid ? grid.closest('.unified-waffle-wrap') : null;
     if (!grid) return;
 
     let html = '';
@@ -2000,17 +2041,60 @@
       let titleText = '';
       if (i < PALMA_DISTRIBUTION.poorShare) {
         groupClass = 'poor';
-        titleText = isEn ? `Cookie #${i+1}: 40% Bottom (${PALMA_DISTRIBUTION.poorShare}%)` : `Galleta #${i+1}: 40% Vulnerable (${PALMA_DISTRIBUTION.poorShare}%)`;
+        titleText = isEn 
+          ? `Cookie #${i+1} · 40% Bottom (${PALMA_DISTRIBUTION.poorShare}%)` 
+          : `Galleta #${i+1} · 40% Vulnerable (${PALMA_DISTRIBUTION.poorShare}%)`;
       } else if (i < PALMA_DISTRIBUTION.poorShare + PALMA_DISTRIBUTION.middleShare) {
         groupClass = 'middle';
-        titleText = isEn ? `Cookie #${i+1}: 50% Middle Class (${PALMA_DISTRIBUTION.middleShare}%)` : `Galleta #${i+1}: 50% Clase Media (${PALMA_DISTRIBUTION.middleShare}%)`;
+        titleText = isEn 
+          ? `Cookie #${i+1} · 50% Middle Class (${PALMA_DISTRIBUTION.middleShare}%)` 
+          : `Galleta #${i+1} · 50% Clase Media (${PALMA_DISTRIBUTION.middleShare}%)`;
       } else {
         groupClass = 'rich';
-        titleText = isEn ? `Cookie #${i+1}: 10% Top (${PALMA_DISTRIBUTION.richShare}%)` : `Galleta #${i+1}: 10% Superior (${PALMA_DISTRIBUTION.richShare}%)`;
+        titleText = isEn 
+          ? `Cookie #${i+1} · 10% Top Decile (${PALMA_DISTRIBUTION.richShare}%)` 
+          : `Galleta #${i+1} · 10% Superior (${PALMA_DISTRIBUTION.richShare}%)`;
       }
-      html += `<div class="waffle-cell ${groupClass}" title="${titleText}" role="presentation"></div>`;
+      html += `<div class="waffle-cell ${groupClass}" data-info="${titleText}" title="${titleText}" tabindex="0" role="img" aria-label="${titleText}"></div>`;
     }
     grid.innerHTML = html;
+
+    // Conectar eventos para el globo interactivo flotante
+    if (tooltip && wrap) {
+      const showTooltip = (e, cell) => {
+        const text = cell.getAttribute('data-info');
+        if (!text) return;
+        tooltip.textContent = text;
+
+        const cellRect = cell.getBoundingClientRect();
+        const wrapRect = wrap.getBoundingClientRect();
+
+        const left = cellRect.left - wrapRect.left + (cellRect.width / 2);
+        const top = cellRect.top - wrapRect.top - 8;
+
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+        tooltip.classList.add('visible');
+        if (e && e.cancelable) e.stopPropagation();
+      };
+
+      const hideTooltip = () => {
+        tooltip.classList.remove('visible');
+      };
+
+      grid.querySelectorAll('.waffle-cell').forEach(cell => {
+        cell.addEventListener('mouseenter', (e) => showTooltip(e, cell));
+        cell.addEventListener('mouseleave', hideTooltip);
+        cell.addEventListener('focus', (e) => showTooltip(e, cell));
+        cell.addEventListener('blur', hideTooltip);
+        cell.addEventListener('touchstart', (e) => showTooltip(e, cell), { passive: true });
+      });
+
+      wrap.addEventListener('mouseleave', hideTooltip);
+      document.addEventListener('touchstart', (e) => {
+        if (!wrap.contains(e.target)) hideTooltip();
+      }, { passive: true });
+    }
   }
 
   function renderCompareTable() {
@@ -2099,18 +2183,20 @@
     const minText = isEn ? "Low (3.7)" : "Mínimo (3.7)";
 
     const annotations = `
-      <!-- COVID Annotation -->
-      <line x1="${getX(2020)}" y1="${getY(4.1) + 8}" x2="${getX(2020)}" y2="${getY(4.1) + 38}" class="tufte-leader-line"/>
-      <rect x="${getX(2020) - 48}" y="${getY(4.1) + 38}" width="96" height="20" class="tufte-annotation-bg"/>
-      <text x="${getX(2020)}" y="${getY(4.1) + 52}" class="tufte-annotation" text-anchor="middle">${covidText}</text>
+      <!-- COVID Annotation: orientado hacia ARRIBA para eliminar colisión con el mínimo de 2023 -->
+      <line x1="${getX(2020)}" y1="${getY(4.1) - 8}" x2="${getX(2020)}" y2="${getY(4.1) - 26}" class="tufte-leader-line"/>
+      <rect x="${getX(2020) - 52}" y="${getY(4.1) - 38}" width="104" height="20" class="tufte-annotation-bg"/>
+      <text x="${getX(2020)}" y="${getY(4.1) - 24}" class="tufte-annotation" text-anchor="middle">${covidText}</text>
 
       <!-- Baseline 2002 -->
-      <line x1="${getX(2002) + 8}" y1="${getY(4.9)}" x2="${getX(2002) + 30}" y2="${getY(4.9)}" class="tufte-leader-line"/>
-      <text x="${getX(2002) + 34}" y="${getY(4.9) + 4}" class="tufte-annotation" text-anchor="start">${startText}</text>
+      <line x1="${getX(2002) + 8}" y1="${getY(4.9)}" x2="${getX(2002) + 24}" y2="${getY(4.9)}" class="tufte-leader-line"/>
+      <rect x="${getX(2002) + 26}" y="${getY(4.9) - 10}" width="88" height="20" class="tufte-annotation-bg"/>
+      <text x="${getX(2002) + 28}" y="${getY(4.9) + 4}" class="tufte-annotation" text-anchor="start">${startText}</text>
 
-      <!-- Min 2023 -->
-      <line x1="${getX(2023) - 8}" y1="${getY(3.7)}" x2="${getX(2023) - 28}" y2="${getY(3.7)}" class="tufte-leader-line"/>
-      <text x="${getX(2023) - 32}" y="${getY(3.7) + 4}" class="tufte-annotation" text-anchor="end">${minText}</text>
+      <!-- Min 2023: ubicado en la base inferior derecha sin colisiones -->
+      <line x1="${getX(2023) - 8}" y1="${getY(3.7)}" x2="${getX(2023) - 22}" y2="${getY(3.7)}" class="tufte-leader-line"/>
+      <rect x="${getX(2023) - 108}" y="${getY(3.7) - 10}" width="84" height="20" class="tufte-annotation-bg"/>
+      <text x="${getX(2023) - 26}" y="${getY(3.7) + 4}" class="tufte-annotation" text-anchor="end">${minText}</text>
     `;
 
     // Puntos de datos y Touch targets
