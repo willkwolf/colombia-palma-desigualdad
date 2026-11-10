@@ -1,0 +1,15 @@
+year,palma_ratio,phase,note_es,note_en,source
+2002,4.9,crisis,Punto de partida con brecha muy profunda,Baseline high inequality starting point,DANE - MESEP (Empalme 2002-2010)
+2004,4.7,crisis,Descenso inicial moderado,Initial gradual reduction,DANE - MESEP (Empalme 2002-2010)
+2006,4.5,crisis,Consolidación gradual,Gradual consolidation,DANE - GEIH / MESEP
+2008,4.4,mejora,Inicio de mejoras laborales,Beginning of labor market gains,DANE - GEIH
+2010,4.6,crisis,Repunte temporal post-crisis global,Temporary post-global crisis rebound,DANE - GEIH Marco 2005
+2012,4.1,mejora,Aumento real de salarios bajos,Real wage growth in lower deciles,DANE - GEIH
+2014,3.9,mejora,Consolidación de transferencias condicionadas,Targeted cash transfer expansion,DANE - GEIH
+2016,3.8,mejora,Mínimo del ciclo de materias primas,Commodity cycle distribution low,DANE - GEIH
+2018,3.9,mejora,Estancamiento previo a pandemia,Pre-pandemic plateau,DANE - GEIH Marco 2018
+2019,3.7,mejora,Mínimo histórico prepandemia,Pre-pandemic historical low,DANE - GEIH Marco 2018
+2020,4.1,regresion,Impacto severo por confinamientos COVID,Severe impact from COVID-19 lockdowns,DANE - GEIH COVID-19 Adjustment
+2021,3.9,recuperacion,Reactivación del empleo informal,Informal employment rebound,DANE - GEIH
+2022,3.8,recuperacion,Recuperación del mercado laboral,Labor market normalization,DANE - GEIH
+2023,3.7,recuperacion,Retorno al mínimo histórico (3.7),Return to series historical low (3.7),DANE - GEIH Comunicado de Pobreza Monetaria 2023

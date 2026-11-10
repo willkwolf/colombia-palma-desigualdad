@@ -1,0 +1,50 @@
+{
+  "$schema": "./schemas/distribution.schema.json",
+  "metadata": {
+    "title": "Distribución del Ingreso en Colombia por Grupos de Palma (La Analogía de las 100 Galletas)",
+    "description": "Participación porcentual en el ingreso total disponible capturado por la base (deciles 1 a 4), la clase media (deciles 5 a 9) y el decil superior (decil 10).",
+    "country": "Colombia",
+    "reference_year": 2023,
+    "source": "DANE - Gran Encuesta Integrada de Hogares (GEIH)",
+    "license": "CC BY 4.0"
+  },
+  "distribution": {
+    "poor_share_pct": 12,
+    "middle_share_pct": 43,
+    "rich_share_pct": 45,
+    "total_pct": 100,
+    "palma_ratio_derived": 3.75,
+    "groups": [
+      {
+        "id": "bottom_40",
+        "deciles": "1-4",
+        "population_share_pct": 40,
+        "income_share_pct": 12,
+        "label_es": "40% Más Vulnerable (Base)",
+        "label_en": "40% Bottom Deciles (Base)",
+        "cookies_out_of_100": 12,
+        "avg_cookies_per_decil": 3.0
+      },
+      {
+        "id": "middle_50",
+        "deciles": "5-9",
+        "population_share_pct": 50,
+        "income_share_pct": 43,
+        "label_es": "50% Clase Media",
+        "label_en": "50% Middle Class",
+        "cookies_out_of_100": 43,
+        "avg_cookies_per_decil": 8.6
+      },
+      {
+        "id": "top_10",
+        "deciles": "10",
+        "population_share_pct": 10,
+        "income_share_pct": 45,
+        "label_es": "10% Más Rico (Cúspide)",
+        "label_en": "10% Top Decile (Peak)",
+        "cookies_out_of_100": 45,
+        "avg_cookies_per_decil": 45.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "./schemas/palma_series.schema.json",
+  "metadata": {
+    "title": "Serie Histórica del Coeficiente de Palma en Colombia (2002–2023)",
+    "description": "Estimación del Coeficiente de Palma a partir de la Gran Encuesta Integrada de Hogares (GEIH) empalmada con la serie histórica MESEP del DANE.",
+    "institution": "Departamento Administrativo Nacional de Estadística (DANE)",
+    "variable": "Ingreso disponible per cápita de la unidad de gasto post-transferencias monetarias",
+    "unit": "Ratio adimensional (Participación Decil 10 / Participación Deciles 1-4)",
+    "coverage": "Nacional (Total Colombia)",
+    "license": "CC BY 4.0",
+    "last_updated": "2026-11-09"
+  },
+  "series": [
+    {
+      "year": 2002,
+      "palma_ratio": 4.9,
+      "phase": "crisis",
+      "note_es": "Punto de partida con brecha muy profunda",
+      "note_en": "Baseline high inequality starting point",
+      "source": "DANE - MESEP (Empalme 2002-2010)"
+    },
+    {
+      "year": 2004,
+      "palma_ratio": 4.7,
+      "phase": "crisis",
+      "note_es": "Descenso inicial moderado",
+      "note_en": "Initial gradual reduction",
+      "source": "DANE - MESEP (Empalme 2002-2010)"
+    },
+    {
+      "year": 2006,
+      "palma_ratio": 4.5,
+      "phase": "crisis",
+      "note_es": "Consolidación gradual",
+      "note_en": "Gradual consolidation",
+      "source": "DANE - GEIH / MESEP"
+    },
+    {
+      "year": 2008,
+      "palma_ratio": 4.4,
+      "phase": "mejora",
+      "note_es": "Inicio de mejoras laborales",
+      "note_en": "Beginning of labor market gains",
+      "source": "DANE - GEIH"
+    },
+    {
+      "year": 2010,
+      "palma_ratio": 4.6,
+      "phase": "crisis",
+      "note_es": "Repunte temporal post-crisis global",
+      "note_en": "Temporary post-global crisis rebound",
+      "source": "DANE - GEIH Marco 2005"
+    },
+    {
+      "year": 2012,
+      "palma_ratio": 4.1,
+      "phase": "mejora",
+      "note_es": "Aumento real de salarios bajos",
+      "note_en": "Real wage growth in lower deciles",
+      "source": "DANE - GEIH"
+    },
+    {
+      "year": 2014,
+      "palma_ratio": 3.9,
+      "phase": "mejora",
+      "note_es": "Consolidación de transferencias condicionadas",
+      "note_en": "Targeted cash transfer expansion",
+      "source": "DANE - GEIH"
+    },
+    {
+      "year": 2016,
+      "palma_ratio": 3.8,
+      "phase": "mejora",
+      "note_es": "Mínimo del ciclo de materias primas",
+      "note_en": "Commodity cycle distribution low",
+      "source": "DANE - GEIH"
+    },
+    {
+      "year": 2018,
+      "palma_ratio": 3.9,
+      "phase": "mejora",
+      "note_es": "Estancamiento previo a pandemia",
+      "note_en": "Pre-pandemic plateau",
+      "source": "DANE - GEIH Marco 2018"
+    },
+    {
+      "year": 2019,
+      "palma_ratio": 3.7,
+      "phase": "mejora",
+      "note_es": "Mínimo histórico prepandemia",
+      "note_en": "Pre-pandemic historical low",
+      "source": "DANE - GEIH Marco 2018"
+    },
+    {
+      "year": 2020,
+      "palma_ratio": 4.1,
+      "phase": "regresion",
+      "note_es": "Impacto severo por confinamientos COVID",
+      "note_en": "Severe impact from COVID-19 lockdowns",
+      "source": "DANE - GEIH COVID-19 Adjustment"
+    },
+    {
+      "year": 2021,
+      "palma_ratio": 3.9,
+      "phase": "recuperacion",
+      "note_es": "Reactivación del empleo informal",
+      "note_en": "Informal employment rebound",
+      "source": "DANE - GEIH"
+    },
+    {
+      "year": 2022,
+      "palma_ratio": 3.8,
+      "phase": "recuperacion",
+      "note_es": "Recuperación del mercado laboral",
+      "note_en": "Labor market normalization",
+      "source": "DANE - GEIH"
+    },
+    {
+      "year": 2023,
+      "palma_ratio": 3.7,
+      "phase": "recuperacion",
+      "note_es": "Retorno al mínimo histórico (3.7)",
+      "note_en": "Return to series historical low (3.7)",
+      "source": "DANE - GEIH Comunicado de Pobreza Monetaria 2023"
+    }
+  ]
+}

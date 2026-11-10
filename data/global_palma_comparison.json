@@ -1,0 +1,108 @@
+{
+  "$schema": "./schemas/distribution.schema.json",
+  "metadata": {
+    "title": "Comparativa Internacional del Coeficiente de Palma",
+    "description": "Valores de referencia internacional del Coeficiente de Palma para economías seleccionadas de la OCDE y América Latina.",
+    "sources": [
+      "Banco Mundial (World Development Indicators - Palma Ratio)",
+      "CEPAL (Comisión Económica para América Latina y el Caribe)",
+      "OCDE (OECD Income Distribution Database)",
+      "DANE (Colombia)"
+    ],
+    "last_updated": "2026-11-09",
+    "license": "CC BY 4.0"
+  },
+  "comparators": [
+    {
+      "country_es": "Noruega",
+      "country_en": "Norway",
+      "iso_code": "NOR",
+      "flag": "🇳🇴",
+      "palma_value": 0.9,
+      "region": "Nordic / Western Europe",
+      "desc_es": "Modelo nórdico: paridad casi total entre extremos.",
+      "desc_en": "Nordic model: near parity between extremes."
+    },
+    {
+      "country_es": "Alemania",
+      "country_en": "Germany",
+      "iso_code": "DEU",
+      "flag": "🇩🇪",
+      "palma_value": 1.1,
+      "region": "Western Europe (EU)",
+      "desc_es": "Estándar de la Unión Europea con fuerte estado de bienestar.",
+      "desc_en": "European Union standard with robust welfare state."
+    },
+    {
+      "country_es": "Estados Unidos",
+      "country_en": "United States",
+      "iso_code": "USA",
+      "flag": "🇺🇸",
+      "palma_value": 2.0,
+      "region": "North America",
+      "desc_es": "Desigualdad alta entre economías de ingreso elevado.",
+      "desc_en": "High inequality among high-income nations."
+    },
+    {
+      "country_es": "Uruguay",
+      "country_en": "Uruguay",
+      "iso_code": "URY",
+      "flag": "🇺🇾",
+      "palma_value": 2.4,
+      "region": "South America",
+      "desc_es": "País más igualitario de América del Sur.",
+      "desc_en": "Most egalitarian society in South America."
+    },
+    {
+      "country_es": "Perú",
+      "country_en": "Peru",
+      "iso_code": "PER",
+      "flag": "🇵🇪",
+      "palma_value": 2.9,
+      "region": "South America",
+      "desc_es": "Avance sostenido durante dos décadas de crecimiento.",
+      "desc_en": "Sustained progress during two decades of growth."
+    },
+    {
+      "country_es": "México",
+      "country_en": "Mexico",
+      "iso_code": "MEX",
+      "flag": "🇲🇽",
+      "palma_value": 3.2,
+      "region": "Latin America / North America",
+      "desc_es": "Desigualdad estructural persistente en grandes ciudades.",
+      "desc_en": "Persistent structural inequality across urban areas."
+    },
+    {
+      "country_es": "Colombia",
+      "country_en": "Colombia",
+      "iso_code": "COL",
+      "flag": "🇨🇴",
+      "palma_value": 3.7,
+      "region": "South America",
+      "is_focal_point": true,
+      "desc_es": "Segundo país más desigual de Sudamérica (Palma 3.7).",
+      "desc_en": "Second most unequal nation in South America (Palma 3.7)."
+    },
+    {
+      "country_es": "Brasil",
+      "country_en": "Brazil",
+      "iso_code": "BRA",
+      "flag": "🇧🇷",
+      "palma_value": 4.0,
+      "region": "South America",
+      "desc_es": "Referente histórico de extrema concentración en la región.",
+      "desc_en": "Historical regional benchmark of extreme income concentration."
+    },
+    {
+      "country_es": "Sudáfrica",
+      "country_en": "South Africa",
+      "iso_code": "ZAF",
+      "flag": "🇿🇦",
+      "palma_value": 7.0,
+      "region": "Sub-Saharan Africa",
+      "desc_es": "La mayor concentración distributiva del planeta.",
+      "desc_en": "Highest recorded income concentration worldwide."
+    }
+  ]
+}

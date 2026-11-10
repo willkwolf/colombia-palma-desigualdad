@@ -1,146 +1,235 @@
-# 🍪 La Galleta Colombiana · Paso 5
-
-### *Visualización interactiva y análisis crítico sobre la concentración de ingresos en Colombia a través del Coeficiente de Palma (2002–2023).*
-### *An interactive visualization and critical analysis of income concentration in Colombia through the Palma Ratio (2002–2023).*
-
----
-
-[![Demo Live](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge&logo=github)](https://willkwolf.github.io/colombia-palma-desigualdad/)
-[![Ecosistema: Paso 5](https://img.shields.io/badge/Ruta_Pensamiento_Crítico-Paso_5-blue?style=for-the-badge)](https://github.com/willkwolf/colombia-palma-desigualdad)
-[![Licencia CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
-[![A11y CI/CD](https://img.shields.io/badge/A11y_CI/CD-passed-46c117?style=for-the-badge)](https://github.com/willkwolf/colombia-palma-desigualdad)
+# 🍪 The Colombian Cookie · Step 5 (La Galleta Colombiana)
+### *Interactive Data Essay, Empirical Modeling, and Epistemological Governance of Income Concentration in Colombia via the Palma Ratio (2002–2023).*
+### *Visualización interactiva, modelado empírico y gobernanza epistemológica de la concentración de ingresos en Colombia a través del Coeficiente de Palma (2002–2023).*
 
 ---
 
-## 🌐 Demo en Vivo / Live Demo
-**👉 [Ver en vivo en GitHub Pages](https://willkwolf.github.io/colombia-palma-desigualdad/)**
+[![Live Interactive Web Application](https://img.shields.io/badge/Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://willkwolf.github.io/colombia-palma-desigualdad/)
+[![OpenWiki Knowledge Base](https://img.shields.io/badge/Docs-OpenWiki%20Hub-orange?style=for-the-badge&logo=gitbook)](https://willkwolf.github.io/colombia-palma-desigualdad/openwiki/)
+[![Critical Thinking Pathway: Step 5](https://img.shields.io/badge/Pathway-Step%205%20Ground-blue?style=for-the-badge)](https://github.com/willkwolf/colombia-palma-desigualdad)
+[![Master Policy: POL-ED-001 v1.1.0](https://img.shields.io/badge/Governance-POL--ED--001%20v1.1.0-darkred?style=for-the-badge)](openwiki/03-contratos-y-tests/06-policy-editorial-maestra.md)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
+[![A11y: WCAG 2.1 AA Compliant](https://img.shields.io/badge/A11y-WCAG%202.1%20AA-success?style=for-the-badge)](openwiki/02-tecnologia-y-arquitectura/03-accesibilidad-wcag-a11y.md)
 
 ---
 
-## 🧭 La Ruta del Pensamiento Crítico (El Ecosistema)
-Este proyecto forma parte de **"La Ruta del Pensamiento Crítico"**, una red interactiva de 5 webs estáticas de `@willkwolf` que conectan teoría económica, dilemas políticos, brechas materiales y contextos locales.
+## 🌐 Live Interactive Application & Documentation Hub
+- **👉 [Interactive Visual Essay (GitHub Pages)](https://willkwolf.github.io/colombia-palma-desigualdad/)**
+- **📖 [Canonical OpenWiki Documentation Hub](https://willkwolf.github.io/colombia-palma-desigualdad/openwiki/)**
+- **📊 [Open Data Portal (`/data`)](data/provenance.md)**
+
+---
+
+## 1. Overview
+**The Colombian Cookie (La Galleta Colombiana)** is an interactive data essay and academic repository that investigates income distribution and elite concentration in Colombia over two decades (2002–2023).
+
+Using Chilean economist **José Gabriel Palma's** seminal framework (University of Cambridge), the project cuts through the mathematical abstractions of the traditional Gini Coefficient to illuminate where distributional struggles actually happen: not in the middle class, but between the richest decile and the bottom 40% of the population.
+
+The artifact integrates:
+1. **Interactive Waffle Chart:** A pedagogical and isomorphic simulation condensing national income into *100 cookies*, demonstrating how 10 individuals take 45 cookies while 40 share just 12.
+2. **Tufte Range-Frame Line Chart:** A zero-chartjunk dynamic SVG graph plotting Colombia's historical Palma trajectory ($3.7$ to $4.9$) without distorting the empirical baseline.
+3. **Epistemological Closing Loop:** A conceptual bridge linking material inequality with the philosophical dilemma between negative liberty and Amartya Sen's capability approach, returning the reader to **Step 3 (*Isaiah Berlin and the Philosophy of Liberty*)**.
+
+---
+
+## 2. Research Context: The Critical Thinking Pathway
+This project is **Step 5 ("Ground / Aterrizar")** of **"The Critical Thinking Pathway" (La Ruta del Pensamiento Crítico)**, a 6-node network of interactive web essays authored by William Camilo Artunduaga Viana (`@willkwolf`):
 
 ```mermaid
 graph TD
-    A["Paso 1: EcoSchoolMap (Comprender)<br><i>mapa-escuelas-politicas</i>"] -- "Cócteles Ideológicos" --> B["Paso 2: BAR-Economic (Mezclar)<br><i>BAR-Economic</i>"]
-    B -- "Test de Sobriedad" --> C["Paso 3: liberty-infographic (Contrastar)<br><i>Isaiah Berlin</i>"]
-    C -- "Límites de la Libertad" --> D["Paso 4: global-inequality (Escalar)<br><i>Igualdad-Economica-2025</i>"]
-    D -- "Contexto Local" --> E["Paso 5: colombia-palma-desigualdad (Aterrizar)<br><i>Desigualdad de Palma</i>"]
-    E -- "Reflexión Ética" --> C
+    A["Step 1: EcoSchoolMap<br/><i>Understand Ideological Frameworks</i>"] --> B["Step 2: BAR-Economic<br/><i>Mix Thought Experiments</i>"]
+    B --> C["Step 3: Isaiah Berlin<br/><i>Contrast Negative vs. Positive Liberty</i>"]
+    C --> D["Step 4: Global Wealth Inequality<br/><i>Scale Global Disparities</i>"]
+    D --> E["Step 5: The Colombian Cookie (Current)<br/><i>Ground to Local Palma Reality</i>"]
+    E --> F["Step 6: Overton Window<br/><i>Challenge Policy Consensus</i>"]
+    E -.->|"Reflective Epistemic Loop"| C
 ```
 
 > [!NOTE]
-> **Estás en el Paso 5: Aterrizar**. En el paso anterior visualizaste la escala de la brecha mundial. Aquí aterrizas ese análisis global a la realidad local de Colombia mediante el Coeficiente de Palma. En la sección final, la tensión social provocada por la extrema desigualdad te invitará a cuestionar éticamente los conceptos y límites de la libertad, **retornando al Paso 3: Filosofía de la Libertad** para cerrar el bucle reflexivo de la ruta.
+> In Step 4, users examine the planetary scale of wealth accumulation. In Step 5, that analysis is grounded in Colombia's institutional reality. When extreme material inequality hollows out formal rights, the user is invited to reassess the limits of political freedom, **re-entering Step 3 to close the philosophical loop**.
 
 ---
 
-## 🔍 Contexto Temático / Philosophical Context
+## 3. Conceptual Framework
 
-El economista chileno **Gabriel Palma** (Universidad de Cambridge) describió un fenómeno global persistente: en casi cualquier sociedad, la clase media (el 50% de la población entre los deciles 5 y 9) captura de forma sumamente estable **entre el 45% y el 55%** del ingreso nacional disponible. Es el "ruido estable" del sistema de distribución.
+### 3.1. Gabriel Palma's Empirical Law: Middle Class Stability
+Gabriel Palma (2011, 2014) observed that across high-, middle-, and low-income nations, the middle 50% of the population (deciles 5 to 9) consistently captures **approximately half of national disposable income** ($\approx 50\% \pm 5\%$). Because the middle share is remarkably stable across diverse political regimes, national inequality is determined by the appropriation battle between the top 10% ($D_{10}$) and the bottom 40% ($\sum_{1}^{4} D_i$):
 
-La desigualdad no se define en el centro, sino en las colas de la pirámide: la disputa se centra en cuántas "galletas" se apropia el extremo superior en comparación con la base. El **Coeficiente de Palma** mide directamente esta relación de poder distributivo:
+$$\text{Palma Ratio} = \frac{\text{Income Share of Decile 10}}{\text{Income Share of Deciles 1 to 4}} = \frac{D_{10}}{\sum_{i=1}^{4} D_i}$$
 
-$$\text{Coeficiente de Palma} = \frac{\text{Participación en el ingreso del 10\% más rico (Decil 10)}}{\text{Participación en el ingreso del 40\% más pobre (Deciles 1 al 4)}}$$
-
-Un Palma de **1.0** representa que la décima parte más rica de la población gana en conjunto exactamente lo mismo que el 40% más desfavorecido. Mientras que países desarrollados registran coeficientes cercanos a 1.0 o 1.2, **Colombia ha oscilado históricamente entre 3.7 y 5.0** en los últimos 20 años, situándose de forma consistente en la lamentable lista de los países más desiguales del planeta.
-
----
-
-## 🤓 Para el Lector más Nerd / Ficha Técnica (Deep Tech & Data Insights)
-
-### Contexto de los Datos y Puntos Ciegos
-Para interpretar la infografía sin estirar el indicador más allá de sus límites metodológicos, es crucial entender cómo está calculada "la galleta" (el ingreso):
-* **Qué SÍ mide:** Mide el **ingreso monetario disponible per cápita del hogar, post-transferencias monetarias públicas**, reportado en la Gran Encuesta Integrada de Hogares (GEIH) del DANE (serie MESEP empalmada). Incluye salarios, pensiones, arriendos imputados y subsidios directos.
-* **Puntos Ciegos (Lo que NO mide):**
-  * **Riqueza acumulada:** Mide flujo de ingresos anuales, no el stock de riqueza (tierra, bienes inmobiliarios o acciones financieras). La desigualdad de riqueza en Colombia es considerablemente superior (3 a 4 veces mayor, con coeficientes Gini de riqueza que superan el 0.85).
-  * **Subreporte del decil 10:** Las encuestas de hogares sufren un severo subreporte de ingresos de capital y dividendos en el 1% y 0.1% más rico. Los multimillonarios reales son invisibles para los encuestadores del DANE, por lo que el Palma real es superior al reportado.
-  * **Brechas regionales:** El Palma nacional de **3.7** suaviza realidades rurales brutales. Departamentos como Chocó o La Guajira registran niveles de pobreza y desigualdad monetaria que duplican las capitales principales.
-
-### Decisiones de Arquitectura Monolítica (Archival-Safe)
-El proyecto rechaza los frameworks modernos para garantizar **inmunidad absoluta a la obsolescencia tecnológica**:
-* **Cero Compilación:** Al no depender de React, Next.js, Vite o npm, el archivo `index.html` es auto-portante (contiene su propio CSS y JavaScript nativo).
-* **Durabilidad en el Tiempo:** Puedes descargar y hacer doble clic sobre `index.html` en cualquier computadora y **funcionará exactamente igual en el año 2040** sin romper dependencias locales.
+### 3.2. Interpreting the Benchmark
+- **Palma $\approx 1.0$:** Parity between extremes (Nordic welfare states: Norway $0.9$, Germany $1.1$).
+- **Palma $\approx 2.0$:** Moderate to high inequality among advanced economies (United States $2.0$).
+- **Palma $\ge 3.5$:** Severe structural concentration (Colombia has fluctuated between **$3.7$ and $4.9$**; South Africa reaches $7.0$).
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 4. Repository Architecture
+The repository is organized following an orthogonal four-tier architecture that decouples empirical data, theoretical conceptualization, governance contracts, and visual presentation:
 
-* **HTML5 Semántico & CSS3 Premium:** Estilo de diseño de museo antiguo e infografía clásica de Tufte con fuentes premium de Google Fonts y escala tipográfica fluida adaptada a desktop y mobile.
-* **Vanilla Javascript & i18n Reactivo:** Lógica reactiva sin dependencias para internacionalización bilingüe completa (ES/EN), renderizado reactivo del Waffle Chart y trazado de gráfico Tufte Range-Frame SVG con microdatos interactivos.
-* **Accesibilidad Total (WCAG 2.1 AA):** Ratios de contraste verificados, navegación completa por teclado, objetivos táctiles generosos (touch targets de 44px+) y lectores de pantalla compatibles (ARIA / sr-only).
-* **GitHub Actions Pipeline:** Workflow automático que valida en cada push la semántica HTML5 y realiza el despliegue automático a producción.
+```
+colombia-palma-desigualdad/
+├── data/                                 # 1. DATA LAYER (Canonical empirical sources)
+│   ├── schemas/                          # JSON Schemas (Draft-07 validation)
+│   │   ├── palma_series.schema.json
+│   │   └── distribution.schema.json
+│   ├── palma_colombia_series.json        # Official 2002-2023 DANE series (structured)
+│   ├── palma_colombia_series.csv         # Tabular open-data format
+│   ├── palma_cookie_distribution.json    # Decile allocation for the 100-cookie model
+│   ├── global_palma_comparison.json      # International benchmarks (OECD / LatAm)
+│   └── provenance.md                     # Source audit trail and methodological limits
+│
+├── docs/                                 # 2. DOCUMENTATION & GOVERNANCE HIERARCHY
+│   ├── README.md                         # Master documentation index
+│   ├── diagnostico_repositorio.md        # Comprehensive diagnostic & sanity report
+│   ├── conceptualizacion/                # Theoretical foundations & economic models
+│   │   ├── teorema_de_palma.md
+│   │   ├── trayectoria_historica_colombia.md
+│   │   ├── puntos_ciegos_metodologicos.md
+│   │   ├── politica_fiscal_y_desigualdad.md
+│   │   └── cierre_etico_y_libertad.md
+│   ├── metodologia/                      # Architecture, A11y & Tufte visual system
+│   │   ├── arquitectura_zero_build.md
+│   │   ├── sistema_visual_tufte.md
+│   │   ├── accesibilidad_wcag_a11y.md
+│   │   └── motor_internacionalizacion.md
+│   ├── contratos/                        # Master Governance Contracts (CON-* & POL-*)
+│   │   ├── CON-DAT-001_gobernanza_datos.md
+│   │   ├── CON-EPI-001_gobernanza_epistemologica.md
+│   │   ├── CON-EDT-001_gobernanza_editorial.md
+│   │   ├── CON-VIZ-001_gobernanza_visual.md
+│   │   ├── CON-TEC-001_gobernanza_tecnica.md
+│   │   └── POL-ED-001_policy_editorial_maestra.md
+│   └── auditoria/                        # Official Audit Reports & E-ADRs
+│       ├── AUDIT_REPORT.md
+│       └── E-ADR/
+│           └── E-ADR-001-desacoplamiento-datos-arquitectura-monolitica.md
+│
+├── openwiki/                             # 3. OPENWIKI KNOWLEDGE BASE (Docsify SPA)
+│   ├── index.html                        # Docsify interactive documentation reader
+│   ├── _sidebar.md                       # Structured sidebar navigation
+│   ├── README.md                         # Knowledge hub landing page
+│   ├── 01-marco-teorico/                 # Theory domain
+│   ├── 02-tecnologia-y-arquitectura/     # Technology domain
+│   ├── 03-contratos-y-tests/             # Master contracts domain
+│   └── 04-auditoria/                     # Audits and decision records domain
+│
+├── .github/workflows/deploy.yml          # CI/CD: Automated HTML5 linting & Pages deployment
+├── index.html                            # 4. PRESENTATION LAYER (Archival-Safe Monolith)
+└── README.md                             # Repository entry point (Current document)
+```
 
 ---
 
-## 📦 Instalación y Uso Local
+## 5. Data and Sources
 
-Al no poseer pasos de compilación ni node_modules, la instalación local es trivial:
+| Dataset File | Format | Coverage | Primary Source | Validation Schema |
+| :--- | :---: | :---: | :--- | :--- |
+| [`palma_colombia_series.json`](data/palma_colombia_series.json) | JSON | 2002–2023 | DANE · GEIH / MESEP | `palma_series.schema.json` |
+| [`palma_colombia_series.csv`](data/palma_colombia_series.csv) | CSV | 2002–2023 | DANE · GEIH / MESEP | RFC 4180 Tabular |
+| [`palma_cookie_distribution.json`](data/palma_cookie_distribution.json) | JSON | Static (2023) | DANE · GEIH 2023 | `distribution.schema.json` |
+| [`global_palma_comparison.json`](data/global_palma_comparison.json) | JSON | Cross-Country | World Bank WDI / ECLAC | `distribution.schema.json` |
+
+Full provenance metadata, survey splicing methodologies, and variable definitions are formalized in [`data/provenance.md`](data/provenance.md).
+
+---
+
+## 6. Methodology & Methodological Blind Spots
+Following **Popperian fallibilism**, the project explicitly documents what its metrics do and do not capture:
+
+1. **Flow vs. Wealth Stock:** The GEIH captures annual disposable income (wages, pensions, cash transfers, imputed rent). It does **not** capture land ownership (where Colombia's Gini exceeds $0.88$) or offshore financial assets. Wealth inequality is estimated to be three to four times higher.
+2. **Top Coding and Capital Underreporting:** The top $1\%$ and $0.1\%$ systematically underreport capital gains and dividends in household surveys. Administrative tax data from DIAN indicate that Colombia's true Palma ratio exceeds $5.0$.
+3. **Territorial Aggregation Fallacy:** The national average ($3.7$) masks extreme subnational divides. Pacific and Caribbean peripheries (Chocó, La Guajira) face poverty rates above $55\%$ and local Palma ratios higher than $5.0$.
+
+See full analysis in [`docs/conceptualizacion/puntos_ciegos_metodologicos.md`](docs/conceptualizacion/puntos_ciegos_metodologicos.md).
+
+---
+
+## 7. Master Governance System
+
+The repository is governed by five master contracts codified in `/docs/contratos/` and synthesized by the canonical **Master Editorial Policy POL-ED-001 (v1.1.0)**:
+
+```mermaid
+graph TD
+    POL["<b>POL-ED-001 (v1.1.0)</b><br/>Master Editorial Policy & Epistemic Governance"]
+    POL --> C1["<b>CON-DAT-001</b><br/>Data Governance & Provenance"]
+    POL --> C2["<b>CON-EPI-001</b><br/>Epistemological Integrity & Anti-Drift"]
+    POL --> C3["<b>CON-EDT-001</b><br/>Editorial Standards & 1:1 i18n Parity"]
+    POL --> C4["<b>CON-VIZ-001</b><br/>Visual Isomorphism & WCAG 2.1 AA"]
+    POL --> C5["<b>CON-TEC-001</b><br/>Zero-Build Architecture & CI/CD"]
+```
+
+### Autonomy and Anti-Drift Matrix
+- **Tier 1 (Autonomous Remediation):** AI agents and automated tools may directly remediate syntax, typos, broken links, contrast tokens, schema validation, and WCAG accessibility issues.
+- **Tier 2 (Human Custodian Sign-off):** Any change affecting core economic theses, empirical baselines, value trade-offs, or conceptual definitions constitutes **Conceptual Drift** and requires explicit written authorization via an **Editorial Architecture Decision Record (E-ADR)** signed by the Conceptual Custodian (`@willkwolf`).
+
+---
+
+## 8. Visual Artifacts and Ergonomics
+- **Tufte Principles:** High data-ink ratio, range-frame coordinate bounds, zero decorative chartjunk.
+- **Isomorphism:** Every graphic vector encodes verifiable mathematical relationships.
+- **Accessibility (WCAG 2.1 AA):**
+  - Minimum contrast ratio of $\ge 4.5:1$ on text and $\ge 3.0:1$ on interactive components.
+  - Skip link (`#main-content`) and full keyboard operability.
+  - Generous touch targets ($\ge 44 \times 44\text{ px}$) on mobile devices.
+  - Screen-reader text (`.sr-only`) accompanying all visual plots.
+
+---
+
+## 9. Reproducibility & Zero-Build Local Usage
+
+The web application requires **zero build steps, zero node_modules, and zero external compilation**:
 
 ```bash
-# 1. Clonar el repositorio
+# 1. Clone the repository
 git clone https://github.com/willkwolf/colombia-palma-desigualdad.git
 cd colombia-palma-desigualdad
 
-# 2. Servir o abrir index.html directamente en tu navegador
+# 2. Open index.html directly in any web browser
+# (Windows)
+start index.html
+# (macOS)
+open index.html
+# (Linux)
+xdg-open index.html
+
+# 3. (Optional) Run a local zero-config server
 npx live-server
 ```
 
----
-
-## 🔧 Guía de Mantenimiento (Edición y Carga de Datos)
-
-Para actualizar la serie histórica de desigualdad y la simulación interactiva con nuevas encuestas publicadas por el DANE:
-
-### 1. Actualizar el Historial
-Busca en `index.html` el array `HISTORICAL_DATA` y añade el nuevo año con su valor y fase:
-```javascript
-const HISTORICAL_DATA = [
-  { year: 2002, value: 4.9, phase: 'crisis' },
-  { year: 2004, value: 4.7, phase: 'crisis' },
-  // ...
-  { year: 2023, value: 3.7, phase: 'recuperacion' }
-];
-```
-*El trazador SVG recalculará de forma automática las proporciones y márgenes de la curva sin Lie Factor.*
-
-### 2. Modificar la Analogía del Waffle Chart
-Localiza el objeto de distribución de las 100 galletas y actualiza sus valores (*asegúrate de que sumen exactamente 100*):
-```javascript
-const PALMA_DISTRIBUTION = {
-  poorShare: 12,    // % de galletas para el 40% pobre
-  middleShare: 43,  // % de galletas para el 50% medio
-  richShare: 45     // % de galletas para el 10% rico
-};
+To explore the OpenWiki knowledge base locally:
+```bash
+# Open openwiki/index.html in browser or serve via live-server
+npx live-server --entry-file=openwiki/index.html
 ```
 
 ---
 
-## 📝 Cómo Citar / Citation (APA 7)
+## 10. References and Citation
 
-**Referencia en formato APA 7ma Edición:**
-> Artunduaga Viana, W. C. (2026). *La Galleta Colombiana: Radiografía de la Desigualdad y Análisis Crítico del Coeficiente de Palma en Colombia* [Visualización de datos interactiva]. GitHub. https://github.com/willkwolf/colombia-palma-desigualdad
+### Academic Reference (APA 7th Edition)
+> Artunduaga Viana, W. C. (2026). *La Galleta Colombiana: Radiografía de la Desigualdad y Análisis Crítico del Coeficiente de Palma en Colombia* [Interactive data essay and epistemological repository]. GitHub. https://github.com/willkwolf/colombia-palma-desigualdad
 
-**BibTeX para referencias bibliográficas:**
+### BibTeX Entry
 ```bibtex
 @software{artunduaga2026palma,
-  author = {Artunduaga Viana, William Camilo},
-  title = {La Galleta Colombiana: Radiografía de la Desigualdad},
-  year = {2026},
+  author    = {Artunduaga Viana, William Camilo},
+  title     = {La Galleta Colombiana: Radiograf{\'i}a de la Desigualdad},
+  year      = {2026},
   publisher = {GitHub},
-  url = {https://github.com/willkwolf/colombia-palma-desigualdad},
-  note = {Visualización crítica interactiva del Coeficiente de Palma en Colombia con micro-datos del DANE}
+  url       = {https://github.com/willkwolf/colombia-palma-desigualdad},
+  note      = {Visualizaci{\'o}n cr{\'i}tica interactiva del Coeficiente de Palma en Colombia con microdatos del DANE y gobernanza OpenWiki}
 }
 ```
 
 ---
 
-## 📜 Licencia / License
-
-Este proyecto se publica bajo la licencia **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+## 11. License
+This repository, its interactive visual essay, documentation, datasets, and OpenWiki knowledge base are published under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
 [![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
 
-**Bajo esta licencia puedes:**
-* **Compartir:** Copiar, redistribuir y comunicar libremente el material.
-* **Adaptar:** Remezclar, transformar y construir sobre el material para cualquier propósito, incluso comercial.
-* **Atribución:** Debes reconocer la autoría de forma correspondiente y proporcionar un enlace a la licencia.
+You are free to:
+- **Share:** Copy and redistribute the material in any medium or format.
+- **Adapt:** Remix, transform, and build upon the material for any purpose, even commercially.
+- **Attribution:** You must give appropriate credit to William Camilo Artunduaga Viana, provide a link to the license, and indicate if changes were made.

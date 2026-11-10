@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PalmaDistributionSchema",
+  "type": "object",
+  "required": ["metadata"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["title", "description", "license"],
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "country": { "type": "string" },
+        "reference_year": { "type": "integer" },
+        "license": { "type": "string" }
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "required": ["poor_share_pct", "middle_share_pct", "rich_share_pct", "total_pct"],
+      "properties": {
+        "poor_share_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "middle_share_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "rich_share_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "total_pct": { "type": "number", "minimum": 100, "maximum": 100 },
+        "palma_ratio_derived": { "type": "number" }
+      }
+    },
+    "comparators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["country_es", "country_en", "palma_value"],
+        "properties": {
+          "country_es": { "type": "string" },
+          "country_en": { "type": "string" },
+          "palma_value": { "type": "number", "minimum": 0 },
+          "region": { "type": "string" },
+          "desc_es": { "type": "string" },
+          "desc_en": { "type": "string" }
+        }
+      }
+    }
+  }
+}

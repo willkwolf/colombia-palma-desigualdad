@@ -1268,9 +1268,12 @@
   <div class="masthead-inner">
     <div class="top-bar">
       <div class="masthead-eyebrow" data-i18n="masthead_eyebrow">Radiografía de la Desigualdad · Colombia (2002–2023)</div>
-      <div class="lang-switcher" role="group" aria-label="Idioma / Language">
-        <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true" aria-label="Cambiar idioma a Español">ES</button>
-        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="Change language to English">EN</button>
+      <div class="masthead-actions" style="display:flex; gap:12px; align-items:center;">
+        <a href="openwiki/index.html" class="openwiki-link" target="_blank" rel="noopener" style="color:var(--gold-light); font-family:'DM Mono', monospace; font-size:var(--fs-xs); text-decoration:none; padding:4px 10px; border:1px solid rgba(255,213,107,0.4); border-radius:4px;" title="Ver documentación en OpenWiki">📖 OpenWiki</a>
+        <div class="lang-switcher" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true" aria-label="Cambiar idioma a Español">ES</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="Change language to English">EN</button>
+        </div>
       </div>
     </div>
 
@@ -1648,6 +1651,11 @@
         <div class="plaque-label" data-i18n="plaque_l_method">Metodología</div>
         <div class="plaque-value" data-i18n="plaque_v_method">Coeficiente de Palma post-transferencias (GEIH / DANE / CEPAL)</div>
 
+        <div class="plaque-label" data-i18n="plaque_l_docs">Documentación</div>
+        <div class="plaque-value">
+          <a href="openwiki/index.html" target="_blank" rel="noopener">OpenWiki (Base Canónica)</a> · <a href="data/palma_colombia_series.json" target="_blank" rel="noopener">Datos Abiertos (JSON)</a>
+        </div>
+
         <div class="plaque-label" data-i18n="plaque_l_repo">Repositorio</div>
         <div class="plaque-value">
           <a href="https://github.com/willkwolf/colombia-palma-desigualdad.git" target="_blank" rel="noopener noreferrer">github.com/willkwolf/colombia-palma-desigualdad</a>
@@ -1811,6 +1819,7 @@
       plaque_l_loc: "Ubicación",
       plaque_l_method: "Metodología",
       plaque_v_method: "Coeficiente de Palma post-transferencias (GEIH / DANE / CEPAL)",
+      plaque_l_docs: "Documentación",
       plaque_l_repo: "Repositorio"
     },
     en: {
@@ -1957,6 +1966,7 @@
       plaque_l_loc: "Location",
       plaque_l_method: "Methodology",
       plaque_v_method: "Post-transfer Palma Ratio (GEIH / DANE / ECLAC)",
+      plaque_l_docs: "Documentation",
       plaque_l_repo: "Repository"
     }
   };
